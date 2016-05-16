@@ -24,6 +24,12 @@ return [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning', 'info'],
+                    'categories' => ['test'],
+                    'logFile' => '@backend/runtime/logs/test.log', // my custom log
+                ],
             ],
         ],
         'errorHandler' => [

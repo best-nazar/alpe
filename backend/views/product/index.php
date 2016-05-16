@@ -24,22 +24,54 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'country',
+            [
+                'attribute' => 'id',
+                'value' => 'id',
+                'contentOptions'=>['style'=>'width: 50px;']
+            ],
+            [
+                'attribute' => 'country',
+                'value' => 'country0.name'
+            ],
+            'name',
             'region1',
             'region2',
-            'type',
-            // 'price',
-            // 'currency',
-            // 'actual_date',
+            [
+                'attribute' => 'type',
+                'value' => 'type0.name'
+            ],
+            [
+                'attribute' => 'price',
+                'value' => 'price',
+                'contentOptions'=>['style'=>'width: 50px;'],
+                'format'=>['decimal',2]
+            ],
+            [
+                'attribute' => 'currency',
+                'value' => 'currency0.label',
+                'contentOptions'=>['style'=>'width: 50px;']
+            ],
+            [
+                'attribute' => 'actual_date',
+                'value' => 'actual_date',
+                'format' => 'date',
+                'contentOptions'=>['style'=>'width: 135px;']
+            ],
             // 'options',
-            // 'name',
+
             // 'short_desc',
             // 'description:ntext',
             // 'status',
             // 'teg',
             // 'main_image',
-            // 'created_at',
+            [
+                'attribute' => 'created_at',
+                'value' => 'created_at',
+                'format' => 'date',
+                'label' => 'Створено',
+                'contentOptions'=>['style'=>'width: 100px;']
+            ],
+
             // 'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],

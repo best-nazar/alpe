@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use dosamigos\fileupload\FileUploadUI;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
@@ -60,4 +61,30 @@ $this->params['breadcrumbs'][] = $this->title;
                 'id',
             ],
     ]) ?>
+
+    <?= FileUploadUI::widget([
+        //'model' => $model,
+        'name'=> 'files',
+        'attribute' => 'main_image',
+        'url' => ['product/image-upload', 'id' => $model->id],
+        'gallery' => false,
+        'fieldOptions' => [
+            'accept' => 'image/*'
+        ],
+        'clientOptions' => [
+            'maxFileSize' => 2000000
+        ],
+        // ...
+        'clientEvents' => [
+            'fileuploaddone' => 'function(e, data) {
+                                    console.log(e);
+                                    console.log(data);
+                                }',
+            'fileuploadfail' => 'function(e, data) {
+                                    console.log(e);
+                                    console.log(data);
+                                }',
+        ],
+    ]);
+    ?>
 </div>

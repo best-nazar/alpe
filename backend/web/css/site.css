@@ -109,3 +109,14 @@ a.desc:after {
 .nav > li > form > button:hover {
     text-decoration: none;
 }
+
+#content {
+    margin-top: 60px;
+}
+#left-side-bar{
+    margin-top: 60px;
+}
+/** file upload widget in Product View */
+.preview img {
+    max-height: 300px;
+}

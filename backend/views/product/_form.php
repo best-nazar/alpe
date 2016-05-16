@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
 /* @var $form yii\widgets\ActiveForm */
-var_dump($countries);
+
 ?>
 
 <div class="product-form">

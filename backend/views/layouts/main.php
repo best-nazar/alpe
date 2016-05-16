@@ -10,6 +10,8 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
+use kartik\sidenav\SideNav;
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -55,13 +57,39 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
-
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+    <div class="row">
+        <div class="col-md-2" id="left-side-bar">
+    <!-- Left SideBar -->
+    <?php
+        echo SideNav::widget([
+        'type' => SideNav::TYPE_DEFAULT,
+        'heading' => 'Options',
+            'items' => [
+                [
+                    'url' => ['/product/index'],
+                    'label' => 'Продукт',
+                    'icon' => 'home'
+                ],
+                [
+                    'label' => 'Help',
+                    'icon' => 'question-sign',
+                    'items' => [
+                        ['label' => 'About', 'icon'=>'info-sign', 'url'=>'#'],
+                        ['label' => 'Contact', 'icon'=>'phone', 'url'=>'#'],
+                        ],
+                ],
+            ],
+        ]);?>
+        </div>
+        <div class="col-md-10" id="content">
+        <!-- content -->
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <?= Alert::widget() ?>
+            <?= $content ?>
+    <!-- content -->
+        </div>
     </div>
 </div>
 
