@@ -66,6 +66,7 @@ class ProductController extends Controller
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'modelImages' => Images::find()->where(['product'=>$id])->all(),
         ]);
     }
 
@@ -214,6 +215,11 @@ class ProductController extends Controller
                 $path = '/images/'.$id.'/'. $fileName;
 
                 $this->addImage($id, $fileName); //save image to DB
+
+                // set as main image
+                $productModel = Product::findOne($id);
+                $productModel->main_image = $fileName;
+                $productModel->save();
 
                 return Json::encode([
                     'files' => [[

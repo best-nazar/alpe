@@ -40,7 +40,7 @@ class m130524_201442_init extends Migration
             'description' => $this->text()->comment('Повний опис'),
             'status' => $this->smallInteger()->notNull()->defaultValue(10)->comment('Службове'),
             'teg'=> $this->integer()->notNull(), // Teg Id FK
-            'main_image'=>$this->string(50),
+            'main_image'=>$this->string(64),
             'created_at' => $this->integer(),
             'updated_at' => $this->integer(),
         ], $tableOptions);
