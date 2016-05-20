@@ -28,7 +28,7 @@ class Productoptions extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'productoptions';
+        return 'productOptions';
     }
 
     /**

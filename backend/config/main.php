@@ -9,7 +9,9 @@ $params = array_merge(
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
+    'homeUrl' => '/product/index',
     'controllerNamespace' => 'backend\controllers',
+    'defaultRoute' => '/product/index',
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
