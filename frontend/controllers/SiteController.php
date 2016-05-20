@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Product;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -67,13 +68,46 @@ class SiteController extends Controller
 
     /**
      * Displays homepage.
-     *
+     * Show products only for Actual Date
      * @return mixed
      */
     public function actionIndex()
     {
-        $this->layout = 'front';
-        return $this->render('index');
+        $tizer = Product::find()
+            ->joinWith('options0')
+            ->joinWith('images')
+            ->where(['options.show_in_teaser'=>1])
+            ->andWhere(['>=','actual_date',time()]) // show before actual_date
+            ->all();
+
+        $weRecommend = Product::find()
+            ->joinWith('options0')
+            ->joinWith('images')
+            ->where(['options.show_in_homepage'=>1])
+            ->andWhere(['>=','actual_date',time()]) // show before actual_date
+            ->all();
+
+        $avtoCharter = Product::find()
+                ->joinWith('options0')
+                ->joinWith('images')
+                ->where(['options.show_in_dash'=>1, 'type'=>'4' ])
+                ->andWhere(['>=','actual_date',time()]) // show before actual_date
+                ->all();
+
+        $aviaCharter = Product::find()
+            ->joinWith('options0')
+            ->joinWith('images')
+            ->where(['options.show_in_dash'=>1, 'type'=>'3' ])
+            ->andWhere(['>=','actual_date',time()]) // show before actual_date
+            ->all();
+
+        //$this->layout = 'front';
+        return $this->render('index',[
+            'tizer' => $tizer,
+            'weRecommend' => $weRecommend,
+            'avtoCharter' => $avtoCharter,
+            'aviaCharter' => $aviaCharter,
+        ]);
     }
 
     /**

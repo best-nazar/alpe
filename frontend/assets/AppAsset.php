@@ -20,7 +20,7 @@ class AppAsset extends AssetBundle
         'css/animations.css',
         'css/theme-animtae.css',
         'css/spectrum.css',
-        'css/style-switcher.css',
+        //'css/style-switcher.css',
         //'css/site.css',
     ];
     public $js = [

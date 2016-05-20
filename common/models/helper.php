@@ -7,6 +7,7 @@ namespace common\models;
 
 
 class helper {
+    const SHOW_NUMBER_OF_FOOTER_PRODUCT = 4;
 
     /**
      * @param $count of month to add to Now
@@ -18,5 +19,18 @@ class helper {
         $interval = new \DateInterval('P'.$count.'M'); // додати Х місяців
         $date->add($interval);
         return $date;
+    }
+
+    /**
+     * Find and return recent added product for Page footer
+     * @return array|Product[]
+     */
+    public static function recentProducts(){
+        $recent = Product::find()
+            ->where(['>=','actual_date',time()]) // show before actual_date
+            ->orderBy(['created_at'=>SORT_DESC, 'updated_at'=>SORT_DESC])
+            ->limit( self::SHOW_NUMBER_OF_FOOTER_PRODUCT)
+            ->all();
+        return $recent;
     }
 } 

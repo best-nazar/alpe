@@ -39,7 +39,7 @@ class Productoptions extends \yii\db\ActiveRecord
         return [
             [['product'], 'integer'],
             [['location', 'in_hotel', 'in_room', 'additional_services', 'food', 'beach', 'note', 'web'], 'string'],
-            [['stars'], 'required'],
+            [['stars'], 'default', 'value' => '0'],
             [['stars'], 'string', 'max' => 3],
             [['product'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product' => 'id']],
         ];

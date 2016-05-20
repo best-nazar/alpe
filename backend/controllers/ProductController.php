@@ -112,10 +112,10 @@ class ProductController extends Controller
             //var_dump($productOptions);
             //var_dump(Yii::$app->request->getBodyParam('actual_date'));
             $product->actual_date = strtotime(Yii::$app->request->getBodyParam('actual_date'));
-                if ($teg->save(false)) {
+                if ($teg->save()) {
                     $tegId = $teg->id;
                         //$productOptionsId = $productOptions->id;
-                        if ($options->save(false)) {
+                        if ($options->save()) {
                             $product->options = $options->id;
                             $product->teg = $tegId;
                         }
@@ -218,8 +218,10 @@ class ProductController extends Controller
 
                 // set as main image
                 $productModel = Product::findOne($id);
-                $productModel->main_image = $fileName;
-                $productModel->save();
+                if ($productModel->main_image == '') {
+                    $productModel->main_image = $fileName;
+                    $productModel->save();
+                }
 
                 return Json::encode([
                     'files' => [[

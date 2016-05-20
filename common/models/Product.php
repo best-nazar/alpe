@@ -148,6 +148,11 @@ class Product extends ActiveRecord
         return $this->hasMany(Productoptions::className(), ['product' => 'id']);
     }
 
+    public function getImages()
+    {
+        return$this->hasMany(Images::className(), ['product' => 'id']);
+    }
+
     /**
      * @inheritdoc
      * @return ProductQuery the active query used by this AR class.
