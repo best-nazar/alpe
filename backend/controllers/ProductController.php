@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Applydates;
 use common\models\Country;
 use common\models\Currency;
 use common\models\Images;
@@ -83,6 +84,7 @@ class ProductController extends Controller
         $productOptions = new Productoptions();
         $teg = new Teg();
         $options = new Options();
+        $dates = new Applydates();
 
         $countries = Country::find()
             ->addSelect(['id','name'])
@@ -139,6 +141,7 @@ class ProductController extends Controller
                 'productOptions' => $productOptions,
                 'teg' => $teg,
                 'options' => $options,
+                'applyDates' => $dates,
             ]);
         }
     }

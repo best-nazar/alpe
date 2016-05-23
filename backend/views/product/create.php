@@ -45,6 +45,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ]) ,
         ],
         [
+            'label' => 'Дати',
+            'content' => $this->render('_applyDates_form', [
+                'dates' => $applyDates,
+                'form' => $form,
+            ]) ,
+        ],
+        [
             'label' => 'Службова',
             'content' => $this->render('create_teg_form', [
                 'teg' => $teg,

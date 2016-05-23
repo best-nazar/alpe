@@ -8,7 +8,7 @@ use frontend\assets\HomePageAsset;
 /* @var $aviaCharter */
 
 
-$this->title = 'My Yii Application';
+$this->title = 'AlpeAdria Tour';
 HomePageAsset::register($this);
 ?>
 <!-- Carousel -->
