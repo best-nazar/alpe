@@ -9,10 +9,13 @@ use yii\widgets\ActiveForm;
 /* @var $productOptions common\models\Productoptions */
 /* @var $teg common\models\Teg */
 /* @var $options common\models\Options */
+/* @var $applyDates common\models\Applydates */
 
 $this->title = 'Create Product';
 $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+$actualPeriod = \common\models\helper::addMonthToNow(Yii::$app->params['actualPeriod']);
 ?>
 <div class="product-create">
 
@@ -28,7 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'types' => $types,
             'currency' => $currency,
             'form' => $form,
-            ]) ,
+            'actualPeriod' =>$actualPeriod,
+        ]) ,
     ],
     [
     'label' => 'Додаткова',
@@ -47,8 +51,9 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             'label' => 'Дати',
             'content' => $this->render('_applyDates_form', [
-                'dates' => $applyDates,
                 'form' => $form,
+                'actualPeriod'=>$actualPeriod,
+                'applyDates' => $applyDates
             ]) ,
         ],
         [

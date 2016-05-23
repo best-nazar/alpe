@@ -9,8 +9,9 @@ use yii\jui\DatePicker;
 /* @var $types */
 /* @var $countries */
 /* @var $currency */
+/* @var $actualPeriod */
 
-$actualPeriod = \common\models\helper::addMonthToNow(Yii::$app->params['actualPeriod']);
+
 ?>
 
 <div class="product-form">

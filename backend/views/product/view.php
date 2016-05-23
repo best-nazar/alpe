@@ -80,27 +80,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                 ]),
             ],
-            /**[
-                'label' => 'Додатково',
-                'content' => GridView::widget([
-                    'dataProvider' => new ArrayDataProvider([
-                        'allModels' => $model->productoptions,
-                        ]),
-                    'columns' => [
-                        'id',
-                        'location',
-                        'stars',
-                        'in_hotel',
-                        'in_room',
-                        'additional_services',
-                        'food',
-                        'beach',
-                        'note',
-                        'web',
-                    ],
-
-                ]),
-            ],*/
             [
                 'label' => 'Налаштування',
                 'content' => DetailView::widget([
@@ -120,6 +99,19 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                     ]
                 ]),
+            ],
+            [
+            'label' => 'Дати',
+            'content' => GridView::widget([
+            'dataProvider' => new ArrayDataProvider([
+            'allModels' => $model->applydates,
+            ]),
+            'columns' => [
+                'begin_date:date',
+                'end_date:date',
+            ],
+
+            ]),
             ],
             [
                 'label' => 'Службова',

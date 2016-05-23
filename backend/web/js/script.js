@@ -3,7 +3,7 @@
  */
 
 function addNewDatesRow(model){
-    var buttonId = $(model).attr('id');
+   /* var buttonId = $(model).attr('id');
     var buttonParentRowId = $(model).parent(). attr('id');
 
     //$( "#"+buttonParentRowId ).clone().appendTo( ".dates_container" );
@@ -12,5 +12,5 @@ function addNewDatesRow(model){
     var rowId = fullRowId.replace("row", "");  //0
     var newRowId = parseInt(rowId) + 1;
     var newRow = newRowContent.prop('id', 'row'+newRowId);
-    $( "#"+fullRowId ).clone().appendTo( ".dates_container" );
+    $( "#"+fullRowId ).clone().appendTo( ".dates_container" );*/
 }

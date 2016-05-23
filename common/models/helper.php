@@ -22,6 +22,17 @@ class helper {
     }
 
     /**
+     * Add number of Days to Now
+     * @param $count
+     * @return bool|string
+     */
+    public static function addDayToNow($count){
+        $startDate = time();
+        $date = date('Y-m-d', strtotime('+'.$count.' day', $startDate));
+        return $date;
+    }
+
+    /**
      * Find and return recent added product for Page footer
      * @return array|Product[]
      */

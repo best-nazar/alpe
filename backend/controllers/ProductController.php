@@ -84,7 +84,7 @@ class ProductController extends Controller
         $productOptions = new Productoptions();
         $teg = new Teg();
         $options = new Options();
-        $dates = new Applydates();
+        $applyDates = new Applydates();
 
         $countries = Country::find()
             ->addSelect(['id','name'])
@@ -111,9 +111,7 @@ class ProductController extends Controller
             $teg->load(Yii::$app->request->post())  &&
             $options->load(Yii::$app->request->post())
             ) {
-            //var_dump($product);
-            //var_dump($productOptions);
-            //var_dump(Yii::$app->request->getBodyParam('actual_date'));
+
             $product->actual_date = strtotime(Yii::$app->request->getBodyParam('actual_date'));
                 if ($teg->save()) {
                     $tegId = $teg->id;
@@ -127,7 +125,18 @@ class ProductController extends Controller
             if ($product->save()) {
                 $productOptions->product = $product->id;
                 $productOptions->save();
+
+                // saving Apply dates
+                foreach (Yii::$app->request->getBodyParam('applyDates') as $dates) {
+                    $applyDates = new Applydates();
+                    $applyDates->product_id = $product->id;
+                    $applyDates->begin_date = strtotime ($dates['begin_date']);
+                    $applyDates->end_date = strtotime ($dates['end_date']);
+                    $applyDates->save();
+                }
+
                 return $this->redirect(['view', 'id' => $product->id]);
+
             } else {
                 throw new ErrorException (Json::encode($product->errors));
             }
@@ -141,7 +150,7 @@ class ProductController extends Controller
                 'productOptions' => $productOptions,
                 'teg' => $teg,
                 'options' => $options,
-                'applyDates' => $dates,
+                'applyDates' => ArrayHelper::map($applyDates, 'begin_date', 'end_date')
             ]);
         }
     }
@@ -172,6 +181,10 @@ class ProductController extends Controller
             ->orderBy('code')
             ->asArray()
             ->all();
+        $applyDates = Applydates::find()
+            ->where(['product_id' => $id])
+            ->orderBy('id')
+            ->all();
         $currencyMap = ArrayHelper::map($currency, 'id', 'code');
         $countriesMap = ArrayHelper::map($countries, 'id', 'name'); // (where 'id' becomes the value and 'name' the name of the value which will be displayed)
         $typesMap = ArrayHelper::map($types, 'id', 'name');
@@ -180,10 +193,23 @@ class ProductController extends Controller
                 $product->load(Yii::$app->request->post())  &&
                 $product->teg0->load(Yii::$app->request->post()) &&
                 $product->options0->load(Yii::$app->request->post()) &&
-                $productOptions->load( Yii::$app->request->post())
+                $productOptions->load( Yii::$app->request->post()) &&
+                Model::loadMultiple($applyDates,Yii::$app->request->post(),'applyDates')
             ){
+
             if ($product->validate()){
                 $product->save();
+
+                // saving Apply dates
+                $i=0;
+                foreach ($applyDates as $dates) {
+                    //$applyDates = new Applydates();
+                    //$applyDates->product_id = $product->id;
+                    $dates->begin_date = strtotime (Yii::$app->request->getBodyParam('applyDates')[$i]['begin_date']);
+                    $dates->end_date = strtotime (Yii::$app->request->getBodyParam('applyDates')[$i]['end_date']);
+                    $dates->save();
+                    $i++;
+                }
             }
             if ($product->teg0->validate()) {
                 $product->teg0->save();
@@ -201,6 +227,7 @@ class ProductController extends Controller
                 'countries' => $countriesMap,
                 'types' => $typesMap,
                 'currency' => $currencyMap,
+                'applyDates' => $applyDates
             ]);
         }
     }

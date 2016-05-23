@@ -11,6 +11,8 @@ $this->title = 'Update Product: ' . $product->name;
 $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $product->name, 'url' => ['view', 'id' => $product->id]];
 $this->params['breadcrumbs'][] = 'Update';
+
+$actualPeriod = \common\models\helper::addMonthToNow(Yii::$app->params['actualPeriod']);
 ?>
 <div class="product-update">
     <h1><?= Html::encode($this->title) ?></h1>
@@ -25,6 +27,7 @@ $this->params['breadcrumbs'][] = 'Update';
                         'types' => $types,
                         'currency' => $currency,
                         'form' => $form,
+                        'actualPeriod' => $actualPeriod
                     ]) ,
                 ],
                 [
@@ -39,6 +42,14 @@ $this->params['breadcrumbs'][] = 'Update';
                     'content' => $this->render('options_form', [
                         'options' => $product->options0,
                         'form' => $form,
+                    ]) ,
+                ],
+                [
+                    'label' => 'Дати',
+                    'content' => $this->render('_applyDates_form', [
+                        'applyDates' => $product->applydates,
+                        'form' => $form,
+                        'actualPeriod' => $actualPeriod
                     ]) ,
                 ],
                 [

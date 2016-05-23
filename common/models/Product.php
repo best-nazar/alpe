@@ -51,7 +51,7 @@ class Product extends ActiveRecord
     public function rules()
     {
         return [
-            [['country', 'type', 'currency', 'actual_date', 'options', 'name', 'teg'], 'required'],
+            [['country', 'type', 'currency', 'actual_date', 'options', 'name', 'teg','price'], 'required'],
             [['country', 'type', 'currency', 'actual_date', 'options', 'status', 'teg', 'created_at', 'updated_at'], 'integer'],
             [['price'], 'number'],
             [['description'], 'string'],
@@ -150,7 +150,7 @@ class Product extends ActiveRecord
 
     public function getImages()
     {
-        return$this->hasMany(Images::className(), ['product' => 'id']);
+        return $this->hasMany(Images::className(), ['product' => 'id']);
     }
 
     /**
