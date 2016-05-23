@@ -20,6 +20,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\helpers\FileHelper;
 use  yii\web\UploadedFile;
+use yii\base\Model;
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -150,13 +151,53 @@ class ProductController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $product = $this->findModel($id);
+        $productOptions = Productoptions::find()
+            ->where(['product'=>$id])
+            ->one();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $countries = Country::find()
+            ->addSelect(['id','name'])
+            ->orderBy('name')
+            ->asArray()
+            ->all();
+        $types = Types::find()
+            ->orderBy('name')
+            ->asArray()
+            ->all();
+        $currency = Currency::find()
+            ->orderBy('code')
+            ->asArray()
+            ->all();
+        $currencyMap = ArrayHelper::map($currency, 'id', 'code');
+        $countriesMap = ArrayHelper::map($countries, 'id', 'name'); // (where 'id' becomes the value and 'name' the name of the value which will be displayed)
+        $typesMap = ArrayHelper::map($types, 'id', 'name');
+
+        if (
+                $product->load(Yii::$app->request->post())  &&
+                $product->teg0->load(Yii::$app->request->post()) &&
+                $product->options0->load(Yii::$app->request->post()) &&
+                $productOptions->load( Yii::$app->request->post())
+            ){
+            if ($product->validate()){
+                $product->save();
+            }
+            if ($product->teg0->validate()) {
+                $product->teg0->save();
+            }
+            if ($product->options0->validate()) {
+                $product->options0->save();
+            }
+            if ($productOptions->validate()) {
+                $productOptions->save();
+            }
+            return $this->redirect(['view', 'id' => $product->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                'product' => $product,
+                'countries' => $countriesMap,
+                'types' => $typesMap,
+                'currency' => $currencyMap,
             ]);
         }
     }

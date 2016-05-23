@@ -59,7 +59,6 @@ HomePageAsset::register($this);
                 </ol>
             </div><!-- /.carousel -->
             <div class="enigma_blog_area ">
-
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="enigma_heading_title">
@@ -102,18 +101,16 @@ HomePageAsset::register($this);
                             <a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Дізнатись більше</a>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
-                <?php } ?>
                 <!-- recommends-->
             </div>
-
-
         </div> <!-- One of three columns -->
         <div class="col-sm-2">
             <!-- side widget-->
             <div class="enigma_sidebar_widget">
                 <div class="enigma_sidebar_widget_title"><h2>Автобусні чартери</h2></div>
-                <?php foreach($avtoCharter as $obj) { ?>
+                    <?php foreach($avtoCharter as $obj) { ?>
                 <div class="media enigma_recent_widget_post">
                     <a title="Переглянути" href="#" class="enigma_recent_widget_post_move">
                         <img width="64" height="64" alt="portfolio-5" class="enigma_recent_widget_post_img wp-post-image"
@@ -125,14 +122,12 @@ HomePageAsset::register($this);
                     </div>
                 </div>
                 <?php } ?>
-
                 <a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Дізнатись більше</a>
             </div>
-            <!-- side widget-->
-            <!-- side widget-->
+
             <div class="enigma_sidebar_widget">
                 <div class="enigma_sidebar_widget_title"><h2>Авіа чартери</h2></div>
-                <?php foreach($aviaCharter as $obj) { ?>
+                    <?php foreach($aviaCharter as $obj) { ?>
                 <div class="media enigma_recent_widget_post">
                     <a title="Hello world!" href="#" class="enigma_recent_widget_post_move">
                         <img width="64" height="64" alt="portfolio-5" class="enigma_recent_widget_post_img wp-post-image"
@@ -152,5 +147,3 @@ HomePageAsset::register($this);
             <!-- weather widget -->
         </div>
     </div> <!-- row -->
-
-<!-- /enigma Callout Section -->
