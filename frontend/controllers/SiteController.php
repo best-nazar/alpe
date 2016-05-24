@@ -13,6 +13,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\web\HttpException;
 
 /**
  * Site controller
@@ -243,6 +244,19 @@ class SiteController extends Controller
 
         return $this->render('resetPassword', [
             'model' => $model,
+        ]);
+    }
+
+    public function actionShowProduct($id)
+    {
+        $model = Product::findOne($id);
+
+        if (!$model){
+            throw new HttpException(404 ,'Не знайдено');
+        }
+
+        return $this->render('ShowProduct',[
+            'model' => $model
         ]);
     }
 }

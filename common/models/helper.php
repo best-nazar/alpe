@@ -5,6 +5,7 @@
 
 namespace common\models;
 
+use yii\helpers\ArrayHelper;
 
 class helper {
     const SHOW_NUMBER_OF_FOOTER_PRODUCT = 4;
@@ -43,5 +44,43 @@ class helper {
             ->limit( self::SHOW_NUMBER_OF_FOOTER_PRODUCT)
             ->all();
         return $recent;
+    }
+
+    /**
+     * Find first date element in product ApplyDates model
+     * and return begin_date time stamp
+     * @param $model
+     * @return mixed|null
+     */
+    public static function productStartDate($model){
+        $applyDates = array_shift( ArrayHelper::map($model->applydates,'id','begin_date') );
+        return count($applyDates)>0 ? $applyDates : null;
+    }
+
+    /**
+     * Show only those Attributes witch has values
+     * @param $model
+     * @return array
+     */
+    public static function productOptionsAttributes($model){
+        $attributes= [
+            'location',
+            'stars',
+            'in_hotel',
+            'in_room',
+            'additional_services',
+            'food',
+            'beach',
+            'note',
+            'web',
+        ];
+        $attributesToDisplay =[];
+        foreach ($attributes as $value){
+            if ( ($model->attributes[$value] != '0') && (!empty($model->attributes[$value])) ) {
+                //var_dump($value.' = '.$model->attributes[$value]);
+                $attributesToDisplay[] = $value;
+            }
+        }
+        return $attributesToDisplay;
     }
 } 

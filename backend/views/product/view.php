@@ -133,9 +133,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
 
         ],
-        'options' => ['tag' => 'div'],
-        'itemOptions' => ['tag' => 'div'],
-        'headerOptions' => ['class' => 'my-class'],
+        //'options' => ['tag' => 'div'],
+        //'itemOptions' => ['tag' => 'div'],
+        'headerOptions' => ['class' => 'tab-class'],
         'clientOptions' => ['collapsible' => true],
     ]); ?>
 

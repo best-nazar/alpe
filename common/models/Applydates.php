@@ -21,7 +21,7 @@ class Applydates extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'applydates';
+        return 'applyDates';
     }
 
     /**

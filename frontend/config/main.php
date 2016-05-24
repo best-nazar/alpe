@@ -34,6 +34,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+              'product/<id:\d+>' => 'site/show-product'
             ],
         ],
         'formatter' => [

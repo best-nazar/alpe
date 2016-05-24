@@ -200,15 +200,15 @@ class ProductController extends Controller
             if ($product->validate()){
                 $product->save();
 
-                // saving Apply dates
-                $i=0;
-                foreach ($applyDates as $dates) {
-                    //$applyDates = new Applydates();
-                    //$applyDates->product_id = $product->id;
-                    $dates->begin_date = strtotime (Yii::$app->request->getBodyParam('applyDates')[$i]['begin_date']);
-                    $dates->end_date = strtotime (Yii::$app->request->getBodyParam('applyDates')[$i]['end_date']);
-                    $dates->save();
-                    $i++;
+                if (Applydates::deleteAll('product_id ='. $id)) {
+                    // saving Apply dates
+                    foreach (Yii::$app->request->getBodyParam('applyDates') as $dates) {
+                        $applyDate = new Applydates();
+                        $applyDate->product_id = $product->id;
+                        $applyDate->begin_date = strtotime($dates['begin_date']);
+                        $applyDate->end_date = strtotime($dates['end_date']);
+                        $applyDate->save();
+                    }
                 }
             }
             if ($product->teg0->validate()) {
@@ -287,7 +287,7 @@ class ProductController extends Controller
 
                 $this->addImage($id, $fileName); //save image to DB
 
-                // set as main image
+                // set as main image first uploaded
                 $productModel = Product::findOne($id);
                 if ($productModel->main_image == '') {
                     $productModel->main_image = $fileName;

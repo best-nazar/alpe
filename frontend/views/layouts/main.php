@@ -9,8 +9,10 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use common\widgets\Stars;
 
 AppAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -97,7 +99,23 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="enigma_heading_title">
+                    <h4>Тури по країнах</h4>
+                </div>
+                <nav>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">Албанія<span class="al"></span></a></li>
+                        <li><a href="#">Греція<span class="gr"></span></a></li>
+                        <li><a href="#">Хорватія<span class="hr"></span></a></li>
+                        <li><a href="#">Чорногорія<span class="mn"></span></a></li>
+                    </ul>
+                </nav>
+            </div>
         <?= $content ?>
+
+        </div> <!-- row -->
     </div> <!-- container ->
 </div>
 

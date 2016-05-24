@@ -12,7 +12,7 @@
 use dosamigos\fileupload\FileUploadUI;?>
 
     <h3>Галерея фотографій</h3>
-
+    <p>Перше завантажене фото стає головним</p>
     <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
 <?php foreach ($modelImages as $image) { ?>
     <div class="row">

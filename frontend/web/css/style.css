@@ -1048,7 +1048,7 @@ transition: all 0.3s ease 0s;
 .enigma_blog_thumb_wrapper_showcase {
     position: relative;
     padding: 0px;
-	width: 250px;
+	width: 100%;
 	overflow: hidden;
 	margin-bottom: 15px;
 	margin-right: 15px;

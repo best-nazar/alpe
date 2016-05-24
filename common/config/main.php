@@ -2,6 +2,7 @@
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'language' => 'uk', // Set the language here
+    //'sourceLanguage' => 'uk',
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
