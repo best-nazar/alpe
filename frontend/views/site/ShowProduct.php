@@ -44,15 +44,13 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                 </div>
             </div>
             <div class="enigma_fuul_blog_detail_padding">
-
                 <h2><a href="<?=\yii\helpers\Url::to(['site/show-product', 'id'=>$model->id])?>">
                         <?=$model->name?>
                     </a>
-
                     <?=Stars::widget([
                         'product'=>$model
                     ]);?>
-                    </h2>
+                </h2>
 
                 <p><?=$model->short_desc?></p>
 
@@ -65,14 +63,11 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                                 'attributes' => [
 
                                     [                      // the owner name of the model
-                                        'label' => 'Країна',
-                                        'value' => $model->country0->name,
+                                        'label' => 'Локація',
+                                        'value' => $model->country0->name. $model->region1. $model->region2,
                                     ],
-                                    'region1',
-                                    'region2',
                                     [                      // the owner name of the model
                                         'label' => 'Ціна',
-
                                         'value' => $model->price.' '. $model->currency0->label,
                                     ],
                                 ],
@@ -100,7 +95,12 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                                 'layout' => '{items}'
                             ]),
                         ],
-
+                        [
+                            'label' => 'Фотогалерея',
+                            'content' => $this->render ('_image_gallery',[
+                                'model' => $model,
+                            ]),
+                        ],
                     ],
                 ]);?>
 

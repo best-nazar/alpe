@@ -43,7 +43,17 @@ return [
             'datetimeFormat' => 'php:d.m.Y H:i:s',
             'timeFormat' => 'php:H:i:s',
         ],
+    ],
+    'modules' => [
+        'social' => [
+            // the module class
+            'class' => 'kartik\social\Module',
 
+            // the global settings for the facebook widget
+            'facebook' => [
+                'appId' => 'FACEBOOK_APP_ID',
+            ],
+        ],
     ],
     'params' => $params,
 ];

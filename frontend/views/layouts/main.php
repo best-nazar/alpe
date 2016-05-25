@@ -10,6 +10,7 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use common\widgets\Stars;
+use kartik\social\FacebookPlugin;
 
 AppAsset::register($this);
 
@@ -146,17 +147,7 @@ AppAsset::register($this);
                 </div>
                 <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
                     <h3 class="enigma_footer_widget_title">Ми у Facebook<div class="enigma-footer-separator" id=""></div></h3>
-                    <ul class="flickr-photos-list">
-                        <li title="" data-original-title=""><a href="http://farm8.staticflickr.com/7373/10412001266_483a1e4c9d_b.jpg"><img src="Weblizar_files/10412001266_483a1e4c9d_s.jpg" alt="Jackie Martinez (#9963)"></a></li>
-                        <li title="" data-original-title=""><a href="http://farm4.staticflickr.com/3705/10278343103_dd92d24d07_b.jpg"><img src="Weblizar_files/10278343103_dd92d24d07_s.jpg" alt="Tim Atlas - Lost in the Waiting Album Cover"></a></li>
-                        <li title="" data-original-title=""><a href="http://farm9.staticflickr.com/8552/10217169844_a83bb0c26f_b.jpg"><img src="Weblizar_files/10217169844_a83bb0c26f_s.jpg" alt="Ortofon Concorde S-120 (#1211)"></a></li>
-                        <li title="" data-original-title=""><a href="http://farm4.staticflickr.com/3832/9391366956_eae44dee74_b.jpg"><img src="Weblizar_files/9391366956_eae44dee74_s.jpg" alt="Horse #9119"></a></li>
-                        <li title="" data-original-title=""><a href="http://farm6.staticflickr.com/5529/9163716976_d5d1a0c052_b.jpg"><img src="Weblizar_files/9163716976_d5d1a0c052_s.jpg" alt="5 241"></a></li>
-                        <li title="" data-original-title=""><a href="http://farm9.staticflickr.com/8266/8681566188_62b2ffa05e_b.jpg"><img src="Weblizar_files/8681566188_62b2ffa05e_s.jpg" alt="Content Magazine x weblizar Salon Image Challenge 13 (#6456)"></a></li>
-                        <li title="" data-original-title=""><a href="http://farm9.staticflickr.com/8361/8436780884_2b2e984a1b_b.jpg"><img src="Weblizar_files/8436780884_2b2e984a1b_s.jpg" alt="Nasty Ray (#1058)"></a></li>
-                        <li title="" data-original-title=""><a href="http://farm9.staticflickr.com/8472/8122661150_5f0dbf6c61_b.jpg"><img src="Weblizar_files/8122661150_5f0dbf6c61_s.jpg" alt="Andrea Garcia / Fancy Made"></a></li>
-                        <li title="" data-original-title=""><a href="http://farm9.staticflickr.com/8196/8075637825_4febf52b7a_b.jpg"><img src="Weblizar_files/8075637825_4febf52b7a_s.jpg" alt="Andrea Garcia / Fancy Made (#4427)"></a></li>
-                    </ul>
+                    <?=FacebookPlugin::widget(['type'=>FacebookPlugin::PAGE, 'settings' => ['href'=>'http://facebook.com/alpeadriatour']]);?>
                 </div>
 
                 <div class="col-md-3 col-sm-6 enigma_footer_widget_column">

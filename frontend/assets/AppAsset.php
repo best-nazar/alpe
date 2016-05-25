@@ -21,7 +21,7 @@ class AppAsset extends AssetBundle
         'css/theme-animtae.css',
         'css/spectrum.css',
         //'css/style-switcher.css',
-        //'css/site.css',
+        'css/site.css',
     ];
     public $js = [
         'js/menu.js',
