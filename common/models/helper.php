@@ -9,6 +9,12 @@ use yii\helpers\ArrayHelper;
 
 class helper {
     const SHOW_NUMBER_OF_FOOTER_PRODUCT = 4;
+    const PRODUCT_PER_PAGE = 10;
+    CONST PRODUCT_TYPE_TOUR = 1; // id of types table
+    CONST PRODUCT_TYPE_EXCURSIONS = 5; // id of table Types
+    CONST PRODUCT_TYPE_CRUISES = 2;
+    CONST PRODUCT_TYPE_AVIA = 3;
+    CONST PRODUCT_TYPE_AVTO = 4;
 
     /**
      * @param $count of month to add to Now
@@ -82,5 +88,23 @@ class helper {
             }
         }
         return $attributesToDisplay;
+    }
+
+    /**
+     * Find country
+     * @param $id
+     * @return null|static
+     */
+    public static function getCountry($id){
+        return Country::findOne($id);
+    }
+
+    /**
+     * Find Type of Product und return object
+     * @param $id
+     * @return null|static
+     */
+    public static function getTypeName($id){
+        return Types::findOne($id);
     }
 } 

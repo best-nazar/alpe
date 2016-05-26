@@ -1,6 +1,8 @@
 <?php
 
 use frontend\assets\HomePageAsset;
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $tizer */
 /* @var $weRecommend */
@@ -21,7 +23,7 @@ HomePageAsset::register($this);
                         <div class="container">
                             <div class="carousel-caption">
                                 <div class="carousel-text">
-                                    <h1 class="animated bounceInRight"><a href="#" ><?=$obj->name?></a></h1>
+                                    <h1 class="animated bounceInRight"><a href="<?=Url::to(['site/show-product','id'=>$obj->id])?>" ><?=$obj->name?></a></h1>
                                     <ul class="list-unstyled carousel-list">
                                         <li title="" data-original-title="" class="animated bounceInLeft">
                                             <?=$obj->country0->name?>,
@@ -61,28 +63,28 @@ HomePageAsset::register($this);
                                 <div class="enigma_blog_thumb_wrapper_showcase_overlay">
                                     <div class="enigma_blog_thumb_wrapper_showcase_overlay_inner ">
                                         <div class="enigma_blog_thumb_wrapper_showcase_icons">
-                                            <a title="Переглянути" href="#"><i class="fa fa-link"></i></a>
+                                            <a title="Переглянути" href="<?=Url::to(['site/show-product','id'=>$obj->id])?>"><i class="fa fa-link"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <h2><a href="#"><?=$obj->name?></a></h2>
+                            <h2><a href="<?=Url::to(['site/show-product','id'=>$obj->id])?>"><?=$obj->name?></a></h2>
                             <i class="fa fa-angle-double-right"></i>
-                            <a href="#"><?=$obj->country0->name?></a>
+                            <a href="<?=Url::to(['site/show-product','id'=>$obj->id])?>"><?=$obj->country0->name?></a>
 
                             <p><?=$obj->short_desc?></p>
                             <hr style="margin: 0">
                             <div class="enigma_blog_thumb_footer">
                                 <ul class="enigma_blog_thumb_date">
                                     <li title="" data-original-title=""><i class="fa fa-money"></i>
-                                        <a href="#"><?=$obj->price?>&nbsp;<?=$obj->currency0->code?></a>
+                                        <a href="<?=Url::to(['site/show-product','id'=>$obj->id])?>"><?=$obj->price?>&nbsp;<?=$obj->currency0->code?></a>
                                     </li>
                                     <li title="" data-original-title=""><i class="fa fa-clock-o"></i>
-                                        <?=Yii::$app->formatter->asDate($obj->created_at)?>
+                                        <?=Yii::$app->formatter->asDate(\common\models\helper::productStartDate($obj))?>
                                     </li>
                                 </ul>
                             </div>
-                            <a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Дізнатись більше</a>
+                            <a href="<?=Url::to(['site/show-product','id'=>$obj->id])?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Дізнатись більше</a>
                         </div>
                     </div>
                     <?php } ?>
@@ -106,7 +108,7 @@ HomePageAsset::register($this);
                 </div>
             </div>
         <?php } ?>
-        <a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Дізнатись більше</a>
+        <a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Більше...</a>
     </div>
 
     <div class="enigma_sidebar_widget">
@@ -123,7 +125,7 @@ HomePageAsset::register($this);
                 </div>
             </div>
         <?php } ?>
-        <a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Дізнатись більше</a>
+        <a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Більше...</a>
     </div>
     <!-- side widget-->
     <!-- weather widget -->

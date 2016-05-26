@@ -1,6 +1,6 @@
 <?php
 /**
- * Product detail view
+ * Single Product detail view
  */
 
 /* @var $model frontend\models\Product */
@@ -12,7 +12,13 @@ use yii\bootstrap\Tabs;
 use common\widgets\Stars;
 use yii\data\ArrayDataProvider;
 
-$this->title = 'AlpeAdria Tour';
+$country = \common\models\helper::getCountry($model->country);
+$type = $model->type0->name;
+
+$this->title = Yii::$app->params['orgName'].' - '.$type.' - '.$model->name;
+$this->params['breadcrumbs'][] = ['label' => $country->name, 'url' => ['site/by-country', 'countryId' => $model->country]];
+$this->params['breadcrumbs'][] = $type;
+
 HomePageAsset::register($this);
 
 ?>
@@ -25,8 +31,7 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
     <div id="post-1" class="enigma_blog_full post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
         <ul class="blog-date-left">
             <li title="" data-original-title="" class="enigma_post_date"><span class="date"><?=date('d',$productStartDate)?></span><h6><?=Yii::$app->formatter->asDate(date('Y-m-d',$productStartDate),'long')?></h6></li>
-
-            <li title="" data-original-title="" class="enigma_blog_comment"><i class="fa fa-comments-o"></i><h6><a href="http://demo.weblizar.com/enigma-premium/hello-world/#comments">1</a></h6></li>
+            <li title="" data-original-title="" class="enigma_blog_comment"><i class="fa fa-comments-o"></i><h6><a href="#">1</a></h6></li>
         </ul>
         <div class="post-content-wrap">
             <div class="enigma_blog_thumb_wrapper_showcase">
@@ -34,22 +39,16 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                     <img src="/images/<?=$model->id?>/<?=$model->main_image?>"
                          class="enigma_img_responsive wp-post-image" alt="<?=$model->name?>" >
                 </div>
-                <div class="enigma_blog_thumb_wrapper_showcase_overlay">
-                    <div class="enigma_blog_thumb_wrapper_showcase_overlay_inner ">
-                        <div class="enigma_blog_thumb_wrapper_showcase_icons">
-                            <a title="<?=$model->name?>" href="<?=\yii\helpers\Url::to(['site/show-product', 'id'=>$model->id])?>">
-                                <i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="enigma_fuul_blog_detail_padding">
                 <h2><a href="<?=\yii\helpers\Url::to(['site/show-product', 'id'=>$model->id])?>">
                         <?=$model->name?>
                     </a>
+                    <div class="starsWidget">
                     <?=Stars::widget([
                         'product'=>$model
                     ]);?>
+                    </div>
                 </h2>
 
                 <p><?=$model->short_desc?></p>
@@ -107,6 +106,9 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                 <div class="blog-post-details-item">
                     <a class="enigma_blog_read_btn" href="/"><i class="fa fa-plus-circle"></i>Замовити</a></div>
                 </div>
+            <div class="pull-left">
+                <a class="back_btn" href="<?=Yii::$app->request->referrer?>"><i class="fa fa-backward"></i>Повернутись</a></div>
+            </div>
         </div>
     </div>
 

@@ -1,7 +1,9 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\helper;
 use common\models\Product;
+use common\models\ProductSearch;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -14,6 +16,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\web\HttpException;
+use yii\data\ActiveDataProvider;
 
 /**
  * Site controller
@@ -247,6 +250,12 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * Show product Detail page
+     * @param $id
+     * @return string
+     * @throws HttpException
+     */
     public function actionShowProduct($id)
     {
         $model = Product::findOne($id);
@@ -257,6 +266,64 @@ class SiteController extends Controller
 
         return $this->render('ShowProduct',[
             'model' => $model
+        ]);
+    }
+
+    /**
+     * Tour by Country
+     * @param null $countryId
+     * @return string
+     * @throws HttpException
+     */
+    public function actionByCountry($countryId=null){
+        if ($countryId==null){
+            throw new HttpException(404, 'Не знайдено');
+        }
+
+
+        $data = Product::find()
+            ->where(['country' => $countryId])
+            ->andWhere(['>=','actual_date',time()]) // show before actual_date
+            ->andWhere(['type'=>helper::PRODUCT_TYPE_TOUR])
+            ->filterWhere(['region1'=>Yii::$app->request->getQueryParam('region1')])
+            ->orderBy('name')
+            ->all();
+
+        return $this->render('ShowByCountry',[
+            'data'=>$data,
+        ]);
+    }
+
+    /**
+     * Show list of Excursions
+     * @return string
+     */
+    public function actionExcursions(){
+        $data = Product::find()
+            //->where(['country' => $countryId])
+            ->Where(['>=','actual_date',time()]) // show before actual_date
+            ->andWhere(['type'=>helper::PRODUCT_TYPE_EXCURSIONS])
+            ->orderBy('name')
+            ->all();
+
+        return $this->render('Excursions',[
+            'data'=>$data,
+        ]);
+    }
+
+    /**
+     * List of Cruises
+     * @return string
+     */
+    public function actionCruises(){
+        $data = Product::find()
+            ->Where(['>=','actual_date',time()]) // show before actual_date
+            ->andWhere(['type'=>helper::PRODUCT_TYPE_CRUISES])
+            ->orderBy('name')
+            ->all();
+
+        return $this->render('Cruises',[
+            'data'=>$data,
         ]);
     }
 }

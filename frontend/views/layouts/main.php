@@ -10,7 +10,9 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use common\widgets\Stars;
+use common\widgets\LeftMenu;
 use kartik\social\FacebookPlugin;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 
@@ -43,7 +45,7 @@ AppAsset::register($this);
             <div class="row ">
                 <div class="col-md-6 col-sm-12 wl_rtl">
                     <div class="logo">
-                        <a href="#" title="AlpeAdria Tour" rel="home">
+                        <a href="<?=Url::home()?>" title="AlpeAdria Tour" rel="home">
                             AlpeAdria Tour						</a>
                         <p>Travel with us!</p>
                     </div>
@@ -72,46 +74,48 @@ AppAsset::register($this);
             'class' => 'nav navbar-default navigation_menu affix',
         ],
     ]);
-    $menuItems = [
-        ['label' => 'Домашня', 'url' => ['/site/index']],
-        ['label' => 'Підбір туру', 'url' => ['/site/about'],
-            'items' => [
-                ['label' => 'Екскурсії', 'url' => ['/site/index'], 'options'=>['class'=>'menu-item menu-item-type-post_type menu-item-object-page menu-item-30'] ],
-                ['label' => 'Всі країни', 'url' => ['/site/index']],
-                ['label' => 'Круїзи', 'url' => ['/site/index']],
-                ['label' => 'Активний відпочинок', 'url' => ['/site/index']],
-            ],
-        ],
-        ['label' => 'Раннє бронювання', 'url' => ['/site/contact']],
-        ['label' => 'Інформація подорожуючому', 'url' => ['/site/contact']],
-        ['label' => 'Про нас', 'url' => ['/site/contact']],
-        ['label' => 'Контакти', 'url' => ['/site/contact']],
-    ];
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
-        'items' => $menuItems,
+        'items' => [
+            ['label' => 'Домашня', 'url' => ['/site/index']],
+            ['label' => 'Підбір туру', 'url' => ['/site/about'],
+                'items' => [
+                    ['label' => 'Екскурсії', 'url' => ['/site/excursions'] ],
+                    ['label' => 'Всі країни', 'url' => ['/site/index']],
+                    ['label' => 'Круїзи', 'url' => ['/site/cruises']],
+                    ['label' => 'Активний відпочинок', 'url' => ['/site/index']],
+                ],
+            ],
+            ['label' => 'Раннє бронювання', 'url' => ['/site/contact']],
+            ['label' => 'Інформація подорожуючому', 'url' => ['/site/contact']],
+            ['label' => 'Про нас', 'url' => ['/site/contact']],
+            ['label' => 'Контакти', 'url' => ['/site/contact']],
+        ],
     ]);
     NavBar::end();
     ?>
 
     <div class="container-full">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
+                <?= Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                 ]) ?>
+                <?= Alert::widget() ?>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-2">
                 <div class="enigma_heading_title">
                     <h4>Тури по країнах</h4>
                 </div>
                 <nav>
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Албанія<span class="al"></span></a></li>
-                        <li><a href="#">Греція<span class="gr"></span></a></li>
-                        <li><a href="#">Хорватія<span class="hr"></span></a></li>
-                        <li><a href="#">Чорногорія<span class="mn"></span></a></li>
-                    </ul>
+                    <?=LeftMenu::widget();?>
                 </nav>
             </div>
         <?= $content ?>

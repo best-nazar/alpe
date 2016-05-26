@@ -2,3 +2,23 @@
     width: 100px;
     height: 90px;
 }
+.starsWidget
+{
+    color: #fba500;
+    display: inline-block;
+}
+
+.back_btn{
+    /*border: 2px solid #444747;*/
+    background-size: 100% 200%;
+    background-color: #FFFFFF;
+   /* background-image: linear-gradient(to bottom, #444747 50%, #fff 50%);*/
+}
+.back_btn i {
+    margin-right:5px;
+}
+.back_btn:hover{
+    background-position: 0 -100%;
+    color: #444747;
+    background-color:#ffffff;
+}
