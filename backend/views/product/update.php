@@ -7,10 +7,10 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $product common\models\Product */
 
-$this->title = 'Update Product: ' . $product->name;
-$this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
+$this->title = 'Редагувати : ' . $product->name;
+$this->params['breadcrumbs'][] = ['label' => 'Продукти', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $product->name, 'url' => ['view', 'id' => $product->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редагування';
 
 $actualPeriod = \common\models\helper::addMonthToNow(Yii::$app->params['actualPeriod']);
 ?>
@@ -68,7 +68,8 @@ $actualPeriod = \common\models\helper::addMonthToNow(Yii::$app->params['actualPe
         ]); ?>
         <p>&nbsp;</p>
         <div class="form-group">
-            <?= Html::submitButton($product->isNewRecord ? 'Create' : 'Update', ['class' => $product->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= Html::submitButton($product->isNewRecord ? 'Створити' : 'Змінити', ['class' => $product->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= Html::a('Повернутись', Yii::$app->request->referrer, ['class'=> 'btn btn-default'])?>
         </div>
 
         <?php ActiveForm::end(); ?>

@@ -107,7 +107,7 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                     <a class="enigma_blog_read_btn" href="/"><i class="fa fa-plus-circle"></i>Замовити</a></div>
                 </div>
             <div class="pull-left">
-                <a class="back_btn" href="<?=Yii::$app->request->referrer?>"><i class="fa fa-backward"></i>Повернутись</a></div>
+                <a class="back_btn" href="<?=Yii::$app->request->referrer?>"><i class="fa fa-backward"></i> Повернутись </a></div>
             </div>
         </div>
     </div>

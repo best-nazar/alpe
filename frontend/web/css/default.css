@@ -54,47 +54,7 @@ a.dropdown-toggle{ color:#fff; }
 	color: #3b3b3b;
 }
 
-/** images in left menu */
-.nav-stacked li .al {
-	background: url("flags/1x1/al.svg");
-	background-size: 30px 30px;
-    background-repeat: no-repeat;
-	width: 30px;
-	height: 30px;
-	float: right; 
-	position: relative;
-	top: -5px;
-}
-.nav-stacked li .gr {
-	background: url("flags/1x1/gr.svg");
-	background-size: 30px 30px;
-    background-repeat: no-repeat;
-	width: 30px;
-	height: 30px;
-	float: right; 
-	position: relative;
-	top: -5px;
-}
-.nav-stacked li .hr {
-	background: url("flags/1x1/hr.svg");
-	background-size: 30px 30px;
-    background-repeat: no-repeat;
-	width: 30px;
-	height: 30px;
-	float: right; 
-	position: relative;
-	top: -5px;
-}
-.nav-stacked li .mn {
-	background: url("flags/1x1/mn.svg");
-	background-size: 30px 30px;
-    background-repeat: no-repeat;
-	width: 30px;
-	height: 30px;
-	float: right; 
-	position: relative;
-	top: -5px;
-}
+
 /** slider css ***/
 .carousel-list li {
 	background:rgba(49, 162, 221, 0.8);

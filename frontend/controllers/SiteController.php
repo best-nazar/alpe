@@ -279,18 +279,25 @@ class SiteController extends Controller
         if ($countryId==null){
             throw new HttpException(404, 'Не знайдено');
         }
-
-
         $data = Product::find()
             ->where(['country' => $countryId])
             ->andWhere(['>=','actual_date',time()]) // show before actual_date
             ->andWhere(['type'=>helper::PRODUCT_TYPE_TOUR])
             ->filterWhere(['region1'=>Yii::$app->request->getQueryParam('region1')])
+            ->filterWhere(['region2'=>Yii::$app->request->getQueryParam('region2')])
+            ->orderBy('name')
+            ->all();
+
+        $model = Product::find()
+            ->where(['country' => $countryId])
+            ->andWhere(['>=','actual_date',time()]) // show before actual_date
+            ->andWhere(['type'=>helper::PRODUCT_TYPE_TOUR])
             ->orderBy('name')
             ->all();
 
         return $this->render('ShowByCountry',[
             'data'=>$data,
+            'model' => $model // for filter
         ]);
     }
 

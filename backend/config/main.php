@@ -46,5 +46,8 @@ return [
         ],
 
     ],
+    'as AccessBehavior' => [
+        'class' => 'backend\models\AccessBehavior'
+     ],
     'params' => $params,
 ];

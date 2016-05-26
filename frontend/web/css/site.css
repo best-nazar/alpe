@@ -8,17 +8,44 @@
     display: inline-block;
 }
 
-.back_btn{
-    /*border: 2px solid #444747;*/
-    background-size: 100% 200%;
-    background-color: #FFFFFF;
-   /* background-image: linear-gradient(to bottom, #444747 50%, #fff 50%);*/
+.alpe li:hover {
+    background-color: #31A3DD !important;
+    border: none;
 }
-.back_btn i {
-    margin-right:5px;
+
+.alpe li:hover a {
+    color:#ffffff;
+    font-weight: bold;
 }
-.back_btn:hover{
-    background-position: 0 -100%;
-    color: #444747;
-    background-color:#ffffff;
+
+.alpe> .active {
+    background-color: #31A3DD !important;
+    border: none;
+    color:#ffffff;
+}
+.alpe> .active a {
+    color:#ffffff;
+    font-weight: bold;
+}
+
+/** images in left menu */
+/**.nav-stacked li .al {
+    background: url("flags/1x1/al.svg");
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    float: right;
+    position: relative;
+    top: -5px;
+}*/
+
+.nav-stacked li .flag {
+    background-size: 30px 30px !important;
+    background-repeat: no-repeat !important;
+    width: 30px;
+    height: 30px;
+    float: right;
+    position: relative;
+    top: -5px;
 }

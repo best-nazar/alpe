@@ -5,6 +5,7 @@
  */
 
 /* @var $data common\models\Product */
+/* @var $model common\models\Product  for filters */
 
 /**
  * sorter url ?sort=name, ?sort=-name
@@ -12,7 +13,7 @@
 
 use yii\helpers\Url;
 use frontend\assets\HomePageAsset;
-use common\widgets\Region1;
+use common\widgets\Filter;
 
 HomePageAsset::register($this);
 
@@ -69,11 +70,18 @@ $this->params['breadcrumbs'][] = $type->name;
 
 </div>
 <div class="col-sm-2">
-    <div>
-        Фільтри:
+    <div class="product-filter">
+        <?=Filter::widget([
+            'model'=>$model,
+            'mainUrl'=>Url::to(['site/by-country', 'countryId' => Yii::$app->request->getQueryParam('countryId')]),
+            'field' => 'region1'
+        ])?>
     </div>
-    <?=Region1::widget([
-        'model'=>$data,
-        'mainUrl'=>Yii::$app->request->getUrl()
-    ])?>
+    <div class="product-filter">
+        <?=Filter::widget([
+            'model'=>$data,
+            'mainUrl'=>Url::to(['site/by-country', 'countryId' => Yii::$app->request->getQueryParam('countryId')]),
+            'field' => 'region2',
+        ])?>
+    </div>
 </div>
