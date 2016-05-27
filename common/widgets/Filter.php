@@ -18,7 +18,7 @@ class Filter extends \yii\bootstrap\Widget {
         parent::init();
 
         if ($this->filterArray()){
-            $this->dropDown();
+            $this->printDropDown();
         }
     }
 
@@ -38,7 +38,7 @@ class Filter extends \yii\bootstrap\Widget {
         return $arr;
     }
 
-    private function dropDown(){
+    private function printDropDown(){
         echo '<b>Фільтр :</b>';
         if (\Yii::$app->request->getQueryParam($this->field)) {
             echo Html::a('<span class="label label-info pull-right" title="Відімнити">X</span>', $this->mainUrl);

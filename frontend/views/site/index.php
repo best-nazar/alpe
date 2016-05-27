@@ -2,6 +2,8 @@
 
 use frontend\assets\HomePageAsset;
 use yii\helpers\Url;
+use common\widgets\Charter;
+use common\models\helper;
 
 /* @var $this yii\web\View */
 /* @var $tizer */
@@ -94,39 +96,15 @@ HomePageAsset::register($this);
         </div> <!-- One of three columns -->
 <div class="col-sm-2">
     <!-- side widget-->
-    <div class="enigma_sidebar_widget">
-        <div class="enigma_sidebar_widget_title"><h2>Автобусні чартери</h2></div>
-        <?php foreach($avtoCharter as $obj) { ?>
-            <div class="media enigma_recent_widget_post">
-                <a title="Переглянути" href="#" class="enigma_recent_widget_post_move">
-                    <img width="64" height="64" alt="portfolio-5" class="enigma_recent_widget_post_img wp-post-image"
-                         src="/images/<?=$obj->id?>/<?=$obj->main_image?>">
-                </a>
-                <div class="media-body">
-                    <h3><a href="#"><?=$obj->name?></a></h3>
-                    <span class="enigma_recent_widget_post_date"><?=$obj->created_at?></span>
-                </div>
-            </div>
-        <?php } ?>
-        <a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Більше...</a>
-    </div>
+    <?=Charter::widget([
+        'type' => helper::PRODUCT_TYPE_AVTO,
+        'header' => 'Автобусні чартери'
+    ])?>
 
-    <div class="enigma_sidebar_widget">
-        <div class="enigma_sidebar_widget_title"><h2>Авіа чартери</h2></div>
-        <?php foreach($aviaCharter as $obj) { ?>
-            <div class="media enigma_recent_widget_post">
-                <a title="Hello world!" href="#" class="enigma_recent_widget_post_move">
-                    <img width="64" height="64" alt="portfolio-5" class="enigma_recent_widget_post_img wp-post-image"
-                         src="/images/<?=$obj->id?>/<?=$obj->main_image?>">
-                </a>
-                <div class="media-body">
-                    <h3><a href="#"><?=$obj->name?></a></h3>
-                    <span class="enigma_recent_widget_post_date"><?=$obj->id?></span>
-                </div>
-            </div>
-        <?php } ?>
-        <a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Більше...</a>
-    </div>
+    <?=Charter::widget([
+        'type' => helper::PRODUCT_TYPE_AVIA,
+        'header' => 'Авіа чартери'
+    ])?>
     <!-- side widget-->
     <!-- weather widget -->
 
