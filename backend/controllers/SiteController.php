@@ -1,6 +1,9 @@
 <?php
 namespace backend\controllers;
 
+use backend\models\imageFactory;
+use common\models\Images;
+use common\models\Product;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -26,7 +29,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index','delete-photo', 'set-main-image'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -80,5 +83,41 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    /**
+     * @param $fileId - file_name in DB
+     * @param $productId
+     * @throws \Exception
+     */
+    public function actionDeletePhoto($fileId, $productId){
+        $file = Yii::getAlias('@webroot'). '/images/'.$productId.'/'.$fileId;
+
+        if (is_file($file)){
+            if (unlink($file)){
+                // delete from DB
+                imageFactory::deleteImageFromDb($fileId,$productId);
+            }
+        } else {
+            imageFactory::deleteImageFromDb($fileId,$productId);
+        }
+        $this->redirect(['product/view', 'id'=>$productId, '#'=>'w6-tab5']);
+    }
+
+    /**
+     * Set main image for product
+     * @param $fileId file_name in DB
+     * @param $productId
+     * @return null|static
+     */
+    public function actionSetMainImage($fileId, $productId)
+    {
+        $product = Product::findOne($productId);
+        if ($product){
+            $product->main_image = $fileId;
+        }
+        if ($product->save()){
+            $this->redirect(['product/view', 'id'=>$productId, '#'=>'w6-tab5']);
+        }
     }
 }

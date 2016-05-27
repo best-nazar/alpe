@@ -12,7 +12,7 @@ use yii\data\ArrayDataProvider;
 /* @var $modelImages common\models\Images */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Продукти', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-view">
@@ -56,13 +56,14 @@ $this->params['breadcrumbs'][] = $this->title;
                         'actual_date:date',
                         'name',
                         'short_desc',
-                        'description:ntext',
+                        'description:html',
                         //'status',
                         //'main_image',
                         'created_at:date',
                         'updated_at:date',
                     ],
                 ]),
+
             ],
             [
                 'label' => 'Додаткова інформація',
@@ -80,6 +81,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'web',
                     ],
                 ]),
+
             ],
             [
                 'label' => 'Налаштування',
