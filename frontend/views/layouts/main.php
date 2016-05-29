@@ -13,6 +13,7 @@ use common\widgets\Stars;
 use common\widgets\LeftMenu;
 use kartik\social\FacebookPlugin;
 use yii\helpers\Url;
+use common\widgets\PageOutput;
 
 AppAsset::register($this);
 
@@ -129,11 +130,11 @@ AppAsset::register($this);
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
-                    <h3 class="enigma_footer_widget_title">Чому ми: <div class="enigma-footer-separator" id=""></div></h3>
-                    <h6>Lorem ipsum dolor sit amet, no consequat ullamcorper nec, te commune constituto intellegebat eam.
-                        Soleat populo id nec. Est in altera vocibus, et vim iudico adolescens, mel no discere mediocritatem.
-                        Nec ei sale honestatis, graeco melius eruditi qui et, id nam mucius maiorum. Pri diceret ornatus cu,
-                        dico quas aliquando vix ea, vix impetus invidunt honestatis id. An his everti animal.				</h6>
+                    <?=PageOutput::widget([
+                        'page_name' => 'benefit',
+                        'header_class' => 'enigma_footer_widget_title',
+                        'body_class' => 'content-line'
+                    ])?>
                 </div>
                 <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
                     <h3 class="enigma_footer_widget_title">Останнє додане<div class="enigma-footer-separator" id=""></div></h3>

@@ -77,17 +77,18 @@ AppAsset::register($this);
                     'icon' => 'glyphicon glyphicon-flag'
                 ],
                 [
-                    'label' => 'Help',
-                    'icon' => 'question-sign',
-                    'items' => [
-                        ['label' => 'About', 'icon'=>'info-sign', 'url'=>'#'],
+                    'label' => 'Загальні сторінки',
+                    'icon' => 'glyphicon glyphicon-th',
+                    /**'items' => [
+                        ['label' => 'Чому ми (footer)', 'icon'=>'info-sign', 'url'=>'#'],
                         ['label' => 'Contact', 'icon'=>'phone', 'url'=>'#'],
-                        ],
+                        ],*/
+                    'url' => ['page/index']
                 ],
             ],
         ]);?>
         </div>
-        <div class="col-md-10" id="content">
+        <div class="col-md-9" id="content">
         <!-- content -->
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -96,6 +97,8 @@ AppAsset::register($this);
             <?= $content ?>
     <!-- content -->
         </div>
+        <div class="col-md-1" >
+            </div>
     </div>
 </div>
 

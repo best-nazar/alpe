@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Country */
+/* @var $model common\models\Page */
 
-$this->title = 'Нова країна';
-$this->params['breadcrumbs'][] = ['label' => 'Країни', 'url' => ['index']];
+$this->title = 'Створити сторінку';
+$this->params['breadcrumbs'][] = ['label' => 'Сторінки', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="country-create">
+<div class="page-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

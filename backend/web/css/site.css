@@ -120,3 +120,8 @@ a.desc:after {
 .preview img {
     max-height: 300px;
 }
+
+/** page views */
+.page-index table .action-column {
+    width: 100px!important;
+}

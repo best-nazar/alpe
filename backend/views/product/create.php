@@ -11,8 +11,8 @@ use yii\widgets\ActiveForm;
 /* @var $options common\models\Options */
 /* @var $applyDates common\models\Applydates */
 
-$this->title = 'Create Product';
-$this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
+$this->title = 'Новий продукт';
+$this->params['breadcrumbs'][] = ['label' => 'Продукти', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $actualPeriod = \common\models\helper::addMonthToNow(Yii::$app->params['actualPeriod']);
@@ -72,7 +72,8 @@ $actualPeriod = \common\models\helper::addMonthToNow(Yii::$app->params['actualPe
     ]); ?>
     <p>&nbsp;</p>
     <div class="form-group">
-        <?= Html::submitButton($product->isNewRecord ? 'Create' : 'Update', ['class' => $product->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($product->isNewRecord ? 'Створити' : 'Змінити', ['class' => $product->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::a('Повернутись', Yii::$app->request->referrer, ['class' => 'btn btn-default'])?>
     </div>
 
     <?php ActiveForm::end(); ?>
