@@ -15,6 +15,8 @@ class helper {
     CONST PRODUCT_TYPE_CRUISES = 2;
     CONST PRODUCT_TYPE_AVIA = 3;
     CONST PRODUCT_TYPE_AVTO = 4;
+    CONST IMAGE_WIDTH = 1000;
+    CONST IMAGE_HEIGHT = 400;
 
     /**
      * @param $count of month to add to Now

@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\imageFactory;
 use common\models\Applydates;
 use common\models\Country;
 use common\models\Currency;
@@ -284,6 +285,9 @@ class ProductController extends Controller
             if ($imageFile->saveAs($filePath)) {
                 //$path = Url::to($filePath );
                 $path = '/images/'.$id.'/'. $fileName;
+
+                // resize image
+                imageFactory::resizeImage($path);
 
                 $this->addImage($id, $fileName); //save image to DB
 
