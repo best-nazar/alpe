@@ -18,8 +18,9 @@ class Charter extends \yii\bootstrap\Widget
         parent::init();
 
         $this->model = Product::find()
+            ->joinWith('options0')
             ->andWhere(['>=','actual_date',time()]) // show before actual_date
-            ->andWhere(['type'=> $this->type])
+            ->andWhere(['options.show_in_dash'=>1,'type'=> $this->type])
             ->orderBy('id')
             ->all();
 
@@ -42,7 +43,7 @@ class Charter extends \yii\bootstrap\Widget
                 echo '</div>';
                 echo '</div>';
             }
-            echo '<a href="' . Url::to(['site/show-product', 'id' => $obj->id]) . '" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Більше...</a>';
+            echo '<a href="' . Url::to(['site/charters', 'type' => $this->type]) . '" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>Більше...</a>';
             echo '</div>';
         }
     }

@@ -91,7 +91,7 @@ class SiteController extends Controller
             ->andWhere(['>=','actual_date',time()]) // show before actual_date
             ->all();
 
-        $avtoCharter = Product::find()
+        /**$avtoCharter = Product::find()
                 ->joinWith('options0')
                 ->joinWith('images')
                 ->where(['options.show_in_dash'=>1, 'type'=>'4' ])
@@ -103,14 +103,14 @@ class SiteController extends Controller
             ->joinWith('images')
             ->where(['options.show_in_dash'=>1, 'type'=>'3' ])
             ->andWhere(['>=','actual_date',time()]) // show before actual_date
-            ->all();
+            ->all();*/
 
         //$this->layout = 'front';
         return $this->render('index',[
             'tizer' => $tizer,
             'weRecommend' => $weRecommend,
-            'avtoCharter' => $avtoCharter,
-            'aviaCharter' => $aviaCharter,
+            /**'avtoCharter' => $avtoCharter,
+            'aviaCharter' => $aviaCharter,*/
         ]);
     }
 
@@ -157,7 +157,7 @@ class SiteController extends Controller
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                Yii::$app->session->setFlash('success', 'Дякуємо Вам за звернення до нас. Ми відповімо вам як можна швидше.');
             } else {
                 Yii::$app->session->setFlash('error', 'There was an error sending email.');
             }
@@ -332,5 +332,46 @@ class SiteController extends Controller
         return $this->render('Cruises',[
             'data'=>$data,
         ]);
+    }
+
+    /**
+     * Static Page
+     * @return string
+     */
+    public function actionAllCountries(){
+        return $this->render('tourSelect');
+    }
+
+    /**
+     * Static page
+     * @return string
+     */
+    public function actionTravelInfo(){
+        return $this->render('simplePage',[
+            'page_name' => 'travel-info'
+        ]);
+    }
+
+    /**
+     * Show List of charters depends on type
+     * @param $type
+     * @return string
+     * @throws HttpException
+     */
+    public function actionCharters($type){
+        $model = Product::find()
+            ->joinWith('options0')
+            ->joinWith('images')
+            ->where(['type'=>$type ])
+            ->andWhere(['>=','actual_date',time()]) // show before actual_date
+            ->all();
+        if ($model) {
+            return $this->render('charter', [
+                'model' => $model,
+                'type'=>$type
+            ]);
+        } else {
+            throw new HttpException(404 ,'Не знайдено');
+        }
     }
 }

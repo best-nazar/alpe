@@ -80,17 +80,17 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Домашня', 'url' => ['/site/index']],
-            ['label' => 'Підбір туру', 'url' => ['/site/about'],
+            ['label' => 'Підбір туру', 'url' => ['/site/tour-select'],
                 'items' => [
                     ['label' => 'Екскурсії', 'url' => ['/site/excursions'] ],
-                    ['label' => 'Всі країни', 'url' => ['/site/index']],
+                    ['label' => 'Всі країни', 'url' => ['/site/all-countries']],
                     ['label' => 'Круїзи', 'url' => ['/site/cruises']],
-                    ['label' => 'Активний відпочинок', 'url' => ['/site/index']],
+                    ['label' => 'Активний відпочинок', 'url' => ['/site/vacations']],
                 ],
             ],
-            ['label' => 'Раннє бронювання', 'url' => ['/site/contact']],
-            ['label' => 'Інформація подорожуючому', 'url' => ['/site/contact']],
-            ['label' => 'Про нас', 'url' => ['/site/contact']],
+            ['label' => 'Раннє бронювання', 'url' => ['/site/booking']],
+            ['label' => 'Інформація подорожуючому', 'url' => ['/site/travel-info']],
+            ['label' => 'Про нас', 'url' => ['/site/about']],
             ['label' => 'Контакти', 'url' => ['/site/contact']],
         ],
     ]);

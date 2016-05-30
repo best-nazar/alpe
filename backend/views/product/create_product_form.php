@@ -31,13 +31,11 @@ use dosamigos\ckeditor\CKEditor;
         <tr>
             <td><?= Html::label('Актуально до :')?>
                 <?= DatePicker::widget(['name' => 'actual_date', 'language'=>Yii::$app->language, 'value'=>$actualPeriod, 'options' => ['class' => 'form-control']]) ?></td>
-            <td> </td>
+            <td>*до цього часу продукт відображатиметься на сайті</td>
             <td> </td>
         </tr>
         </tbody>
     </table>
-
-
 
     <?= $form->field($product, 'name')->textInput(['maxlength' => true]) ?>
     <?= $form->field($product, 'short_desc')->textInput(['maxlength' => true]) ?>

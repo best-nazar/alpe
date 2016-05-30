@@ -125,3 +125,8 @@ a.desc:after {
 .page-index table .action-column {
     width: 100px!important;
 }
+
+/** file upload widget*/
+.files img {
+    max-width: 250px;
+}

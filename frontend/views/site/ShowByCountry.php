@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $type->name;
         <div class="col-md-4 col-sm-12 scrollimation scale-in d2 pull-left" style="width: 100%">
             <div class="enigma_blog_thumb_wrapper">
                 <div class="enigma_blog_thumb_wrapper_showcase">
-                    <img src="/images/<?=$obj->id?>/<?=$obj->main_image?>" class="enigma_img_responsive wp-post-image" alt="portfolio-5">
+                    <img src="/images/<?=$obj->id?>/<?=$obj->main_image?>" class="enigma_img_responsive wp-post-image" alt="<?=$obj->name?>">
                     <div class="enigma_blog_thumb_wrapper_showcase_overlay">
                         <div class="enigma_blog_thumb_wrapper_showcase_overlay_inner ">
                             <div class="enigma_blog_thumb_wrapper_showcase_icons">

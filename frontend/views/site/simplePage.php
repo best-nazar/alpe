@@ -1,20 +1,18 @@
 <?php
+/**
+ * Page Output View
+ * @var $page_name
+ */
 
-/* @var $this yii\web\View */
-
-use common\widgets\Charter;
 use common\widgets\PageOutput;
+use common\widgets\Charter;
 use common\models\helper;
-
-$this->title = 'Про нас';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="col-sm-8">
-
-    <p><?=PageOutput::widget([
-            'page_name'=>'about'
-        ])?></p>
-
+    <?=PageOutput::widget([
+        'page_name' => $page_name
+    ])?>
 </div>
 <div class="col-sm-2">
     <!-- side widget-->

@@ -1,5 +1,5 @@
 <?php
 return [
-    'adminEmail' => 'admin@example.com',
+    'adminEmail' => 'office@alpeadriatour.com',
     'siteName'=> 'AlpeAdria Tour - Система управління сайтом'
 ];
