@@ -1,5 +1,5 @@
 var caroufredsel = function () {
-    jQuery('#enigma_portfolio_section').carouFredSel({
+    jQuery('#alpe_portfolio_section').carouFredSel({
         width: '100%',
         responsive: true,
         scroll : {
@@ -21,7 +21,7 @@ var caroufredsel = function () {
         }
     });
 
-    jQuery('#enigma_blog_section').carouFredSel({
+    jQuery('#alpe_blog_section').carouFredSel({
         width: '100%',
         responsive: true,
         scroll : {
@@ -44,7 +44,7 @@ var caroufredsel = function () {
         }
     });
 
-    jQuery('#enigma_testimonial_section').carouFredSel({
+    jQuery('#alpe_testimonial_section').carouFredSel({
         width: '100%',
         responsive: true,
         scroll : {
@@ -65,7 +65,7 @@ var caroufredsel = function () {
     });
 
     // jQuery CarouFredSel  For Client
-    jQuery('#enigma_client_section').carouFredSel({
+    jQuery('#alpe_client_section').carouFredSel({
         width: '100%',
         height: 'variable',
         responsive: true,

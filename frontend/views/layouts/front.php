@@ -102,48 +102,48 @@ AppAsset::register($this);
 </div>
 
 <!-- Footer Widget Secton -->
-<div class="enigma_footer_widget_area">
+<div class="alpe_footer_widget_area">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
-                <h3 class="enigma_footer_widget_title">Чому ми: <div class="enigma-footer-separator" id=""></div></h3>
+            <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
+                <h3 class="alpe_footer_widget_title">Чому ми: <div class="alpe-footer-separator" id=""></div></h3>
                 <h6>Lorem ipsum dolor sit amet, no consequat ullamcorper nec, te commune constituto intellegebat eam.
                     Soleat populo id nec. Est in altera vocibus, et vim iudico adolescens, mel no discere mediocritatem.
                     Nec ei sale honestatis, graeco melius eruditi qui et, id nam mucius maiorum. Pri diceret ornatus cu,
                     dico quas aliquando vix ea, vix impetus invidunt honestatis id. An his everti animal.				</h6>
             </div>
-            <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
-                <h3 class="enigma_footer_widget_title">Останнє додане<div class="enigma-footer-separator" id=""></div></h3>
-                <div class="media enigma_recent_widget_post">
-                    <a class="enigma_recent_widget_post_move" href="#">
-                        <img src="Weblizar_files/member2.jpg" class="enigma_recent_widget_post_img">
+            <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
+                <h3 class="alpe_footer_widget_title">Останнє додане<div class="alpe-footer-separator" id=""></div></h3>
+                <div class="media alpe_recent_widget_post">
+                    <a class="alpe_recent_widget_post_move" href="#">
+                        <img src="Weblizar_files/member2.jpg" class="alpe_recent_widget_post_img">
                     </a>
                     <div class="media-body">
                         <h3><a href="#">Donec scelerisque minec lectus</a></h3>
-                        <span class="enigma_recent_widget_post_date">Posted July 20, 2013</span>
+                        <span class="alpe_recent_widget_post_date">Posted July 20, 2013</span>
                     </div>
                 </div>
-                <div class="media enigma_recent_widget_post">
-                    <a class="enigma_recent_widget_post_move" href="#">
-                        <img src="Weblizar_files/member2.jpg" class="enigma_recent_widget_post_img">
+                <div class="media alpe_recent_widget_post">
+                    <a class="alpe_recent_widget_post_move" href="#">
+                        <img src="Weblizar_files/member2.jpg" class="alpe_recent_widget_post_img">
                     </a>
                     <div class="media-body">
                         <h3><a href="#">Donec scelerisque minec lectus</a></h3>
-                        <span class="enigma_recent_widget_post_date">Posted July 20, 2013</span>
+                        <span class="alpe_recent_widget_post_date">Posted July 20, 2013</span>
                     </div>
                 </div>
-                <div class="media enigma_recent_widget_post">
-                    <a class="enigma_recent_widget_post_move" href="#">
-                        <img src="Weblizar_files/member2.jpg" class="enigma_recent_widget_post_img">
+                <div class="media alpe_recent_widget_post">
+                    <a class="alpe_recent_widget_post_move" href="#">
+                        <img src="Weblizar_files/member2.jpg" class="alpe_recent_widget_post_img">
                     </a>
                     <div class="media-body">
                         <h3><a href="#">Donec scelerisque minec lectus</a></h3>
-                        <span class="enigma_recent_widget_post_date">Posted July 20, 2013</span>
+                        <span class="alpe_recent_widget_post_date">Posted July 20, 2013</span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
-                <h3 class="enigma_footer_widget_title">Ми у Facebook<div class="enigma-footer-separator" id=""></div></h3>
+            <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
+                <h3 class="alpe_footer_widget_title">Ми у Facebook<div class="alpe-footer-separator" id=""></div></h3>
                 <ul class="flickr-photos-list">
                     <li title="" data-original-title=""><a href="http://farm8.staticflickr.com/7373/10412001266_483a1e4c9d_b.jpg"><img src="Weblizar_files/10412001266_483a1e4c9d_s.jpg" alt="Jackie Martinez (#9963)"></a></li>
                     <li title="" data-original-title=""><a href="http://farm4.staticflickr.com/3705/10278343103_dd92d24d07_b.jpg"><img src="Weblizar_files/10278343103_dd92d24d07_s.jpg" alt="Tim Atlas - Lost in the Waiting Album Cover"></a></li>
@@ -157,8 +157,8 @@ AppAsset::register($this);
                 </ul>
             </div>
 
-            <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
-                <h3 class="enigma_footer_widget_title">Контакти<div class="enigma-footer-separator" id=""></div></h3>
+            <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
+                <h3 class="alpe_footer_widget_title">Контакти<div class="alpe-footer-separator" id=""></div></h3>
                 <address>
                     <p><i class="fa fa-phone"></i> +38 (032) 232-29-01</p>
                     <p><i class="fa fa-envelope"></i>79017 Львів</p>
@@ -182,12 +182,12 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
-<div class="enigma_footer_area">
+<div class="alpe_footer_area">
     <div class="container">
         <div class="col-md-12">
-            <p class="enigma_footer_copyright_info wl_rtl">туристична фірма Альпе Адріа Тур 2016&nbsp;<a rel="nofollow" href="#</a>
+            <p class="alpe_footer_copyright_info wl_rtl">туристична фірма Альпе Адріа Тур 2016&nbsp;<a rel="nofollow" href="#</a>
 			</p>
-						<div class="enigma_footer_social_div">
+						<div class="alpe_footer_social_div">
             <ul class="social">
                 <a href="https://facebook.com/"><li data-original-title="Facebook" class="facebook" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-facebook"></i></li></a>
                 <a href="https://twitter.com/"><li data-original-title="Twiiter" class="twitter" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-twitter"></i></li></a>
@@ -206,13 +206,13 @@ AppAsset::register($this);
 </div>
 
 <!--Scroll To Top-->
-<a style="display: inline;" href="#" title="Go Top" class="enigma_scrollup"><i class="fa fa-chevron-up"></i></a>
+<a style="display: inline;" href="#" title="Go Top" class="alpe_scrollup"><i class="fa fa-chevron-up"></i></a>
 <!--/Scroll To Top-->
 
 
 <!-- /Footer Widget Secton -->
 <!--Scroll To Top-->
-<a style="display: inline;" href="#" title="Go Top" class="enigma_scrollup"><i class="fa fa-chevron-up"></i></a>
+<a style="display: inline;" href="#" title="Go Top" class="alpe_scrollup"><i class="fa fa-chevron-up"></i></a>
 <!--/Scroll To Top-->
 </div>
 

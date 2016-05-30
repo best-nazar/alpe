@@ -112,7 +112,7 @@ AppAsset::register($this);
         </div>
         <div class="row">
             <div class="col-sm-2">
-                <div class="enigma_heading_title">
+                <div class="alpe_heading_title">
                     <h4>Тури по країнах</h4>
                 </div>
                 <nav>
@@ -126,37 +126,37 @@ AppAsset::register($this);
 </div>
 
 <!-- Footer Widget Secton -->
-    <div class="enigma_footer_widget_area">
+    <div class="alpe_footer_widget_area">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
+                <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
                     <?=PageOutput::widget([
                         'page_name' => 'benefit',
-                        'header_class' => 'enigma_footer_widget_title',
+                        'header_class' => 'alpe_footer_widget_title',
                         'body_class' => 'content-line'
                     ])?>
                 </div>
-                <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
-                    <h3 class="enigma_footer_widget_title">Останнє додане<div class="enigma-footer-separator" id=""></div></h3>
+                <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
+                    <h3 class="alpe_footer_widget_title">Останнє додане<div class="alpe-footer-separator" id=""></div></h3>
                     <?php foreach( \common\models\helper::recentProducts() as $recent) { ?>
-                    <div class="media enigma_recent_widget_post">
-                        <a class="enigma_recent_widget_post_move" href="#">
-                            <img src="/images/<?=$recent->id?>/<?=$recent->main_image?>" class="enigma_recent_widget_post_img">
+                    <div class="media alpe_recent_widget_post">
+                        <a class="alpe_recent_widget_post_move" href="#">
+                            <img src="/images/<?=$recent->id?>/<?=$recent->main_image?>" class="alpe_recent_widget_post_img">
                         </a>
                         <div class="media-body">
                             <h3><a href="#"><?=$recent->name?></a></h3>
-                            <span class="enigma_recent_widget_post_date"><?=Yii::$app->formatter->asDate($recent->created_at)?></span>
+                            <span class="alpe_recent_widget_post_date"><?=Yii::$app->formatter->asDate($recent->created_at)?></span>
                         </div>
                     </div>
                     <?php } ?>
                 </div>
-                <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
-                    <h3 class="enigma_footer_widget_title">Ми у Facebook<div class="enigma-footer-separator" id=""></div></h3>
+                <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
+                    <h3 class="alpe_footer_widget_title">Ми у Facebook<div class="alpe-footer-separator" id=""></div></h3>
                     <?=FacebookPlugin::widget(['type'=>FacebookPlugin::PAGE, 'settings' => ['href'=>'http://facebook.com/alpeadriatour']]);?>
                 </div>
 
-                <div class="col-md-3 col-sm-6 enigma_footer_widget_column">
-                    <h3 class="enigma_footer_widget_title">Контакти<div class="enigma-footer-separator" id=""></div></h3>
+                <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
+                    <h3 class="alpe_footer_widget_title">Контакти<div class="alpe-footer-separator" id=""></div></h3>
                     <address>
                         <p><i class="fa fa-phone"></i> +38 (032) 232-29-01</p>
                         <p><i class="fa fa-envelope"></i>79017 Львів</p>
@@ -180,12 +180,12 @@ AppAsset::register($this);
             </div>
         </div>
     </div>
-    <div class="enigma_footer_area">
+    <div class="alpe_footer_area">
         <div class="container">
             <div class="col-md-12">
-                <p class="enigma_footer_copyright_info wl_rtl">туристична фірма Альпе Адріа Тур 2016&nbsp;<a rel="nofollow" href="#</a>
+                <p class="alpe_footer_copyright_info wl_rtl">туристична фірма Альпе Адріа Тур 2016&nbsp;<a rel="nofollow" href="#</a>
 			</p>
-						<div class="enigma_footer_social_div">
+						<div class="alpe_footer_social_div">
                 <ul class="social">
                     <a href="https://facebook.com/"><li data-original-title="Facebook" class="facebook" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-facebook"></i></li></a>
                     <a href="https://twitter.com/"><li data-original-title="Twiiter" class="twitter" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-twitter"></i></li></a>
@@ -204,13 +204,13 @@ AppAsset::register($this);
 </div>
 
 <!--Scroll To Top-->
-<a style="display: inline;" href="#" title="Go Top" class="enigma_scrollup"><i class="fa fa-chevron-up"></i></a>
+<a style="display: inline;" href="#" title="Go Top" class="alpe_scrollup"><i class="fa fa-chevron-up"></i></a>
 <!--/Scroll To Top-->
 
 
 <!-- /Footer Widget Secton -->
 <!--Scroll To Top-->
-<a style="display: inline;" href="#" title="Go Top" class="enigma_scrollup"><i class="fa fa-chevron-up"></i></a>
+<a style="display: inline;" href="#" title="Go Top" class="alpe_scrollup"><i class="fa fa-chevron-up"></i></a>
 <!--/Scroll To Top-->
 </div>
 

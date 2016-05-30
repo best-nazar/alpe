@@ -1,4 +1,4 @@
- //enigma  social tooltip js
+ //alpe  social tooltip js
  jQuery(function(){
 		jQuery('li').tooltip();
 		jQuery("[data-toggle='tooltip']").tooltip();
@@ -14,13 +14,13 @@
 	jQuery(document).ready(function () {	
 		jQuery(window).scroll(function () {
 			if (jQuery(this).scrollTop() > 100) {
-				jQuery('.enigma_scrollup').fadeIn();
+				jQuery('.alpe_scrollup').fadeIn();
 			} else {
-				jQuery('.enigma_scrollup').fadeOut();
+				jQuery('.alpe_scrollup').fadeOut();
 			}
 		});
 	
-		jQuery('.enigma_scrollup').click(function () {
+		jQuery('.alpe_scrollup').click(function () {
 			jQuery("html, body").animate({
 				scrollTop: 0
 			}, 600);

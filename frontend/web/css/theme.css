@@ -320,7 +320,7 @@ color: #999;
 /*** page Header Breadcrum Title ******************************************************************************************************
 **************************************************************************************************************************/
 
-.enigma_header_breadcrum_title{
+.alpe_header_breadcrum_title{
 	margin-bottom:70px;
 	background:#edf0f2;
 	opacity:1;
@@ -328,7 +328,7 @@ color: #999;
 	padding-bottom:8px;
 	
 }
-.enigma_header_breadcrum_title h1{
+.alpe_header_breadcrum_title h1{
 	color:#777777;
 }
 .breadcrumb {
@@ -372,10 +372,10 @@ color: #999;
 }
 
 /*** blog css **/
-.enigma_blog_right_side{
+.alpe_blog_right_side{
 	float:right;
 }
-.enigma_sidebar_left_side{
+.alpe_sidebar_left_side{
 
 float:left;
 
@@ -505,78 +505,78 @@ background-position: 0 -100%;
 	background-color: #f6f6f6;
 	border-color: #e9e9e9;
 }
-.enigma_panel-pink {
+.alpe_panel-pink {
 	border-color: #F22853;
 }
-.enigma_panel-pink > .panel-heading {
+.alpe_panel-pink > .panel-heading {
 	color: #fff;
 	background-color: #F22853;
 	border-color: #F22853;
 }
-.enigma_panel-green {
+.alpe_panel-green {
 	border-color: #1FA67A;
 }
-.enigma_panel-green > .panel-heading {
+.alpe_panel-green > .panel-heading {
 	color: #fff;
 	background-color: #1FA67A;
 	border-color: #1FA67A;
 }
-.enigma_panel-black {
+.alpe_panel-black {
 	border-color: #000000;
 }
-.enigma_panel-black > .panel-heading {
+.alpe_panel-black > .panel-heading {
 	color: #fff;
 	background-color: #000000;
 	border-color: #000000;
 }
-.enigma_panel-orange{
+.alpe_panel-orange{
 	border-color: #ff8300;
 }
-.enigma_panel-orange > .panel-heading {
+.alpe_panel-orange > .panel-heading {
 	color: #fff;
 	background-color: #ff8300;
 	border-color: #ff8300;
 }
-.enigma_panel-blue {
+.alpe_panel-blue {
 	border-color: #31A3DD;
 }
-.enigma_panel-blue > .panel-heading {
+.alpe_panel-blue > .panel-heading {
 	color: #fff;
 	background-color: #31A3DD;
 	border-color: #31A3DD;
 }
-.enigma_panel-red {
+.alpe_panel-red {
 	border-color: #db2723;
 }
-.enigma_panel-red > .panel-heading {
+.alpe_panel-red > .panel-heading {
 	color: #fff;
 	background-color: #db2723;
 	border-color: #db2723;
 }
-.enigma_panel-purple {
+.alpe_panel-purple {
 	border-color: #800080;
 }
-.enigma_panel-purple > .panel-heading {
+.alpe_panel-purple > .panel-heading {
 	color: #fff;
 	background-color: #800080;
 	border-color: #800080;
 }
-.enigma_panel-brown {
+.alpe_panel-brown {
 	border-color: #555555;
 }
-.enigma_panel-brown > .panel-heading {
+.alpe_panel-brown > .panel-heading {
 	color: #fff;
 	background-color: #555555;
 	border-color: #555555;
 }
 /** contact form field ***/
-.enigma_contact_form_fields{
+.alpe_contact_form_fields{
 	padding-right: 60px;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	border-right: 1px solid #E5E5E5;
 }
-.enigma_contact_info{
+.alpe_contact_info{
 	padding-left: 60px;
 	padding-top: 30px;
 	padding-bottom: 30px;

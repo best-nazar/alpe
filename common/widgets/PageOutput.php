@@ -21,7 +21,7 @@ class PageOutput extends \yii\bootstrap\Widget
         if ($page) {
             echo '<h3 class="' . $this->header_class . '">';
             echo $page->title;
-            echo '<div class="enigma-footer-separator" id=""></div>';
+            echo '<div class="alpe-footer-separator" id=""></div>';
             echo "</h3>";
             echo '<h6 class="' . $this->body_class . '">';
             echo $page->content;

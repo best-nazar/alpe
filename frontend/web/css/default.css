@@ -1,5 +1,5 @@
-#enigma_nav_top ul li.current-menu-parent { background-color:#31A3DD !important; }
-#enigma_nav_top ul li.current-menu-parent { color:#fff !important; } 
+#alpe_nav_top ul li.current-menu-parent { background-color:#31A3DD !important; }
+#alpe_nav_top ul li.current-menu-parent { color:#fff !important; }
 a.dropdown-toggle{ color:#fff; }
 
 
@@ -37,19 +37,19 @@ a.dropdown-toggle{ color:#fff; }
 	background-color: rgba(49, 162, 221, 0.9);
 }
 /** headings titles css ***/
-.enigma_heading_title h3 {
+.alpe_heading_title h3 {
 	border-bottom: 4px solid #31A3DD;
 	color: #3b3b3b;
 }
-.enigma_heading_title2 h3 {
+.alpe_heading_title2 h3 {
 	border-bottom: 2px solid #31A3DD;
 	color: #3b3b3b;
 }
-.enigma_heading_title h4 {
+.alpe_heading_title h4 {
 	border-bottom: 4px solid #31A3DD;
 	color: #3b3b3b;
 }
-.enigma_heading_title2 h4 {
+.alpe_heading_title2 h4 {
 	border-bottom: 2px solid #31A3DD;
 	color: #3b3b3b;
 }
@@ -61,7 +61,7 @@ a.dropdown-toggle{ color:#fff; }
 }
 
 /** service  section css ***/
-.enigma_service_iocn{
+.alpe_service_iocn{
 	/*border: 4px solid #31A3DD;*/
 	/*background-size: 100% 200%;*/
 	background-color:#31A3DD;
@@ -77,24 +77,24 @@ a.dropdown-toggle{ color:#fff; }
 	background-image: url("flags/Bulgaria.png");
 }
 
-.enigma_service_area:hover .enigma_service_iocn i {
+.alpe_service_area:hover .alpe_service_iocn i {
 	color:#31A3DD;
 	
 }
-.enigma_service_area:hover .enigma_service_iocn{
+.alpe_service_area:hover .alpe_service_iocn{
 	background-position: 0 -100%;
 	background-color:#ffffff;
 }
-.enigma_service_iocn_2 i{
+.alpe_service_iocn_2 i{
 	background: #fff;
 	border: 4px solid #31A3DD;
 }
-.enigma_service_iocn_2 i{
+.alpe_service_iocn_2 i{
 	color: #31A3DD;
 	background-size: 100% 200%;
 	background-image: linear-gradient(to bottom, #fff 50%, #31A3DD 50%);
  }
-.enigma_service_area_2:hover .enigma_service_iocn_2 i{
+.alpe_service_area_2:hover .alpe_service_iocn_2 i{
 	background-position: 0 -100%;
 	color: #ffffff;
 	background-color:#31A3DD;
@@ -104,45 +104,45 @@ a.dropdown-toggle{ color:#fff; }
 /****************portfolio css ********************************************************
 ********************************************************************************/
 
-.enigma_home_portfolio_showcase .enigma_home_portfolio_showcase_icons a {
+.alpe_home_portfolio_showcase .alpe_home_portfolio_showcase_icons a {
 	background-color: #31A3DD;
 	border:2px solid #31A3DD;
 	color:#fff;
 }
-.enigma_home_portfolio_showcase .enigma_home_portfolio_showcase_icons a:hover{
+.alpe_home_portfolio_showcase .alpe_home_portfolio_showcase_icons a:hover{
 	background-color: #ffffff;
 	border:2px solid #31A3DD;
 	color:#31A3DD;
 }
-.enigma_home_portfolio_caption {
+.alpe_home_portfolio_caption {
 	border-left:1px solid #ccc;
 	border-bottom:4px solid #31A3DD;
 	border-right:1px solid #ccc;
 }
 
-.enigma_home_portfolio_caption:hover{
+.alpe_home_portfolio_caption:hover{
     background: #31A3DD;
 }
-.enigma_home_portfolio_caption:hover  h3 a ,.enigma_home_portfolio_caption:hover  small{
+.alpe_home_portfolio_caption:hover  h3 a ,.alpe_home_portfolio_caption:hover  small{
    color: #ffffff;
 }
-.img-wrapper:hover .enigma_home_portfolio_caption{
+.img-wrapper:hover .alpe_home_portfolio_caption{
  background: #31A3DD;
  border-left:1px solid #31A3DD;
 	border-bottom:4px solid #31A3DD;
 	border-right:1px solid #31A3DD;
 }
-.img-wrapper:hover .enigma_home_portfolio_caption  h3 a,.img-wrapper:hover .enigma_home_portfolio_caption  small{
+.img-wrapper:hover .alpe_home_portfolio_caption  h3 a,.img-wrapper:hover .alpe_home_portfolio_caption  small{
  color: #ffffff;
 }
 
-.enigma_proejct_button a {
+.alpe_proejct_button a {
 	background-color: #f8504b;
 	color: #FFFFFF;
 	border: 2px solid #31A3DD;
 	transition: all 0.4s ease 0s;
 }
-.enigma_proejct_button a:hover {
+.alpe_proejct_button a:hover {
 	background-color: #ffffff;
 	color: #31A3DD;
 	border: 2px solid #31A3DD;
@@ -151,26 +151,26 @@ a.dropdown-toggle{ color:#fff; }
 }
 
 
-.enigma_carousel-prev, .enigma_carousel-next {
+.alpe_carousel-prev, .alpe_carousel-next {
     background-color: #fff;
 	border: 2px solid #31A3DD;
 }
-.enigma_carousel-prev:hover, .enigma_carousel-next:hover {
+.alpe_carousel-prev:hover, .alpe_carousel-next:hover {
     background-color: #31A3DD;
 	color:#fff;
 }
-.enigma_carousel-prev:hover i, .enigma_carousel-next:hover i{
+.alpe_carousel-prev:hover i, .alpe_carousel-next:hover i{
     color:#fff;
 }
-.enigma_carousel-prev i,
-.enigma_carousel-next i {
+.alpe_carousel-prev i,
+.alpe_carousel-next i {
 	color: #31A3DD;
 }
 
 /*** project detail ***/
 
 
-.enigma_portfolio_detail_pagi li a {
+.alpe_portfolio_detail_pagi li a {
 	color: #404040;
 	border:2px solid #31A3DD;
 	text-align:center;
@@ -182,28 +182,28 @@ a.dropdown-toggle{ color:#fff; }
     transition: all ease 0.5s;
 	
 }
-.enigma_portfolio_detail_pagi li a:hover {
+.alpe_portfolio_detail_pagi li a:hover {
 	color: #404040;
 	border:2px solid #31A3DD;
 	background-position: 0 -100%;
 	background-color:#ffffff;
 }
 
-.enigma_portfolio_detail_pagi li a span{
+.alpe_portfolio_detail_pagi li a span{
 	color:#fff;
 	line-height:35px;
 }
-.enigma_portfolio_detail_pagi li a:hover span{
+.alpe_portfolio_detail_pagi li a:hover span{
 	color:#31A3DD;
 }
-.enigma-project-detail-sidebar p small {
+.alpe-project-detail-sidebar p small {
 	color:#777777;
 	
 }
 
 
 
-.enigma-project-detail-sidebar .launch-enigma-project a {
+.alpe-project-detail-sidebar .launch-alpe-project a {
 
 	color: #ffffff;
 	border: 2px solid #31A3DD;
@@ -215,7 +215,7 @@ a.dropdown-toggle{ color:#fff; }
     transition: all ease 0.5s;
 	
 }
-.enigma-project-detail-sidebar .launch-enigma-project a:hover {
+.alpe-project-detail-sidebar .launch-alpe-project a:hover {
 	background-color: #ffffff;
 	color: #31A3DD;
 	border: 2px solid #31A3DD;
@@ -224,13 +224,13 @@ a.dropdown-toggle{ color:#fff; }
 
 /** gallery css **/
 
-.enigma_gallery_showcase .enigma_gallery_showcase_icons a {
+.alpe_gallery_showcase .alpe_gallery_showcase_icons a {
 	background-color: #31A3DD;
 	border:2px solid #31A3DD;
 	color:#fff;
 }
 
-.enigma_gallery_showcase .enigma_gallery_showcase_icons a:hover{
+.alpe_gallery_showcase .alpe_gallery_showcase_icons a:hover{
 	background-color: #ffffff;
 	border:2px solid #31A3DD;
 	color:#31A3DD;
@@ -241,49 +241,49 @@ a.dropdown-toggle{ color:#fff; }
 ********************************************************************************/
 
 /** blog thumbnail css **/
-.enigma_blog_thumb_wrapper{
+.alpe_blog_thumb_wrapper{
 	background:#fff;
 	border-bottom: 5px solid #31A3DD;
 	box-shadow: 0 0 6px rgba(0,0,0,.7);
 
 }
-.enigma_blog_thumb_wrapper h2 a{
+.alpe_blog_thumb_wrapper h2 a{
 	color:#31A3DD;
 	transition: all 0.4s ease 0s;
 }
 
-.enigma_blog_thumb_wrapper h2:hover a{
+.alpe_blog_thumb_wrapper h2:hover a{
 	color:#31A3DD;
 
 }
-.enigma_blog_thumb_date li i{
+.alpe_blog_thumb_date li i{
 	color: #31A3DD;
 }
-.enigma_tags a{
+.alpe_tags a{
 	background-size: 100% 200%;
 	
     background-image: linear-gradient(to bottom, #edf0f2 50%, #31A3DD 50%);
  }
 
-.enigma_tags a:hover{
+.alpe_tags a:hover{
 	color:#fff;
 	background-position: 0 -100%;
 	background-color:#31A3DD;
 }
-.enigma_tags a i{
+.alpe_tags a i{
 	color:#31A3DD;
 }
-.enigma_tags a:hover i{
+.alpe_tags a:hover i{
 	color:#fff;
 }
 
-.enigma_blog_thumb_wrapper span a i{
+.alpe_blog_thumb_wrapper span a i{
 	color: #31A3DD;
 }
-.enigma_blog_thumb_wrapper span a {
+.alpe_blog_thumb_wrapper span a {
 	color:#555;
 	
-}.enigma_blog_thumb_footer{
+}.alpe_blog_thumb_footer{
 	padding-top:20px;
 	padding-bottom:10px;
 	/**border-top:3px solid  #f5f5f5;*/
@@ -291,22 +291,22 @@ a.dropdown-toggle{ color:#fff; }
 	float: left;
 }
 
-.enigma_blog_read_btn{
+.alpe_blog_read_btn{
 	border: 2px solid #31A3DD;
 	background-size: 100% 200%;
 	background-color:#31A3DD;
     background-image: linear-gradient(to bottom, #31A3DD 50%, #fff 50%);
    }
-.enigma_blog_read_btn i {
+.alpe_blog_read_btn i {
 	margin-right:5px;
 }
-.enigma_blog_read_btn:hover{
+.alpe_blog_read_btn:hover{
 	background-position: 0 -100%;
 	color: #31A3DD;
 	background-color:#ffffff;
 }
 
-.enigma_blog_thumb_wrapper_showcase .enigma_blog_thumb_wrapper_showcase_icons a {
+.alpe_blog_thumb_wrapper_showcase .alpe_blog_thumb_wrapper_showcase_icons a {
 	background-color: #31A3DD;
 	color: #fff;
 	-webkit-transition: all .25s ease-in;
@@ -314,46 +314,46 @@ a.dropdown-toggle{ color:#fff; }
     -o-transition: all .25s ease-in;
     transition: all .25s ease-in;
 }
-.enigma_blog_thumb_wrapper_showcase .enigma_blog_thumb_wrapper_showcase_icons a:hover{
+.alpe_blog_thumb_wrapper_showcase .alpe_blog_thumb_wrapper_showcase_icons a:hover{
 	background-color: #ffffff;
 	border: 2px solid #31A3DD;
 	color: #31A3DD;
 }
 /********* Blog Full width css ********/
-.enigma_post_date {
+.alpe_post_date {
 	background: #31A3DD;
 	color: #ffffff;
 }
-.enigma_blog_comment:hover i, .enigma_blog_comment:hover h6{
+.alpe_blog_comment:hover i, .alpe_blog_comment:hover h6{
 	color:#31A3DD;
 } 
-.enigma_fuul_blog_detail_padding h2 a{
+.alpe_fuul_blog_detail_padding h2 a{
 	color:#31A3DD;
 }
-.enigma_fuul_blog_detail_padding h2  a:hover{
+.alpe_fuul_blog_detail_padding h2  a:hover{
 	color:#31A3DD;
 }
 /*** blog sidebar css **/
-.enigma_recent_widget_post h3 a {
+.alpe_recent_widget_post h3 a {
 	color:#31A3DD;
 }
-.enigma_sidebar_widget {
+.alpe_sidebar_widget {
 	border-left: 3px solid #31A3DD;
 	border-right: 3px solid #31A3DD;
 	border-bottom: 3px solid #31A3DD;
 }
-.enigma_sidebar_widget_title{
+.alpe_sidebar_widget_title{
 	background:#31A3DD;
 }
-.enigma_sidebar_link p a:hover  , .enigma_sidebar_widget ul li a:hover {
+.alpe_sidebar_link p a:hover  , .alpe_sidebar_widget ul li a:hover {
 	color: #31A3DD;
 }
 
-.enigma_widget_tags a , .tagcloud a {
+.alpe_widget_tags a , .tagcloud a {
 	background-size: 100% 200%;
     background-image: linear-gradient(to bottom, #edf0f2 50%, #31A3DD 50%);
  }
-.enigma_widget_tags a:hover , .tagcloud a:hover {
+.alpe_widget_tags a:hover , .tagcloud a:hover {
 	border: 1px solid #31A3DD;
 	background-position: 0 -100%;
 	color: #fff;
@@ -361,26 +361,26 @@ a.dropdown-toggle{ color:#fff; }
 }
 
 /** blog detail **/
-.enigma_author_detail_wrapper{
+.alpe_author_detail_wrapper{
 	background: #31A3DD;
 	padding:15px;
 	margin-bottom:40px;
 	
 }
-.enigma_author_detail_wrapper{
+.alpe_author_detail_wrapper{
 	border-left:2px solid #31A3DD;
 }
 /** blog  form input css **/ 
 .reply a {
 	color: #31A3DD;
 }
-.enigma_con_input_control:focus, .enigma_con_textarea_control:focus,
-.enigma_contact_input_control:focus, .enigma_contact_textarea_control:focus {
+.alpe_con_input_control:focus, .alpe_con_textarea_control:focus,
+.alpe_contact_input_control:focus, .alpe_contact_textarea_control:focus {
   border-color: #31A3DD;
   -webkit-box-shadow: inset 0 0px 0px #31A3DD, 0 0 5px #31A3DD;
           box-shadow: inset 0 0px 0px #31A3DD, 0 0 5px #31A3DD;
 }
-.enigma_send_button , #enigma_send_button{
+.alpe_send_button , #alpe_send_button{
 	border-color: #31A3DD;
 	color: #6a6a6a;
 	background-size: 100% 200%;
@@ -389,7 +389,7 @@ a.dropdown-toggle{ color:#fff; }
     -moz-transition: all ease 0.5s;
     transition: all ease 0.5s;
 }
-.enigma_send_button:hover ,#enigma_send_button:hover{
+.alpe_send_button:hover ,#alpe_send_button:hover{
 	background-position: 0 -100%;
     border: 2px solid #31A3DD;
 	color: #ffffff;
@@ -398,10 +398,10 @@ a.dropdown-toggle{ color:#fff; }
 
 
 
-.enigma_blog_pagination {
+.alpe_blog_pagination {
 	background-color: #FFFFFF;	
 }
-.enigma_blog_pagi a {
+.alpe_blog_pagi a {
 	border: 1px solid #dbdbdb !important;
 	background-color: #ffffff;
 	background-size: 100% 200%;
@@ -411,7 +411,7 @@ a.dropdown-toggle{ color:#fff; }
     transition: all ease 0.5s;
 	color: #777777;
 }
-.enigma_blog_pagi a:hover, .enigma_blog_pagi a.active {
+.alpe_blog_pagi a:hover, .alpe_blog_pagi a.active {
 	background-position: 0 -100%;
 	color: #ffffff;
 	background-color:#31A3DD;
@@ -419,10 +419,10 @@ a.dropdown-toggle{ color:#fff; }
 
 /****** Testimonial css *******************************************
 ****************************************************************/
-.enigma_testimonial_area i{
+.alpe_testimonial_area i{
 	color:#31A3DD;
 }
-.enigma_testimonial_area img{
+.alpe_testimonial_area img{
 	border: 10px solid #31A3DD;
 }
 .pager a{
@@ -435,81 +435,81 @@ a.dropdown-toggle{ color:#fff; }
 }
 /**** Client Css *************************************************
 ****************************************************************/
-.enigma_client_wrapper:hover {
+.alpe_client_wrapper:hover {
 	border: 4px solid #31A3DD;
 
 }
-.enigma_client_prev, .enigma_client_next {
+.alpe_client_prev, .alpe_client_next {
     background-color: #fff;
 	border: 2px solid #31A3DD;
 }
-.enigma_client_prev:hover, .enigma_client_next:hover {
+.alpe_client_prev:hover, .alpe_client_next:hover {
     background-color: #31A3DD;
 	color:#fff;
 }
-.enigma_client_prev:hover i, .enigma_client_next:hover i{
+.alpe_client_prev:hover i, .alpe_client_next:hover i{
     color:#fff;
 }
 
-.enigma_carousel-prev i,
-.enigma_carousel-next i {
+.alpe_carousel-prev i,
+.alpe_carousel-next i {
 	color: #31A3DD;
 }
 /**** About us page Css *************************************************
 ****************************************************************/
-.enigma_team_showcase .enigma_team_showcase_icons a {
+.alpe_team_showcase .alpe_team_showcase_icons a {
 	background-color: #31A3DD;
 	border:2px solid #31A3DD;
 	color:#fff;
 }
 
-.enigma_team_showcase .enigma_team_showcase_icons a:hover{
+.alpe_team_showcase .alpe_team_showcase_icons a:hover{
 	background-color: #ffffff;
 	border:2px solid #31A3DD;
 	color:#31A3DD;
 }
 
-.enigma_team_caption:hover{
+.alpe_team_caption:hover{
     background: #31A3DD;
 }
-.enigma_team_caption:hover  h3 a ,.enigma_team_caption:hover  small{
+.alpe_team_caption:hover  h3 a ,.alpe_team_caption:hover  small{
    color: #ffffff;
 }
 
-.enigma_team_wrapper:hover .enigma_team_caption{
+.alpe_team_wrapper:hover .alpe_team_caption{
  background: #31A3DD;
 }
-.enigma_team_wrapper:hover .enigma_team_caption  h3 ,.enigma_team_wrapper:hover .enigma_team_caption  small{
+.alpe_team_wrapper:hover .alpe_team_caption  h3 ,.alpe_team_wrapper:hover .alpe_team_caption  small{
  color: #ffffff;
 }
 /***** Call Out Section *****************************************************************
 ***************************************************************************************/
-.enigma_callout_area {
+.alpe_callout_area {
 	background-color: #31A3DD;
 
 }
 /***** Footer Area Css *****************************************************************
 ***************************************************************************************/
-.enigma_footer_area{
+.alpe_footer_area{
 	background: #31A3DD;
 	border-top: 0px solid #6B6B6B;
 }
 /***** Contact Info Css *****************************************************************
 ***************************************************************************************/
-.enigma_contact_info li .desc {
+.alpe_contact_info li .desc {
 	color: #31A3DD;
 }
 /***** Shortcode  Css *****************************************************************
 ***************************************************************************************/
 /*Dropcaps Styles*/
-.enigma_dropcape_square span {
+.alpe_dropcape_square span {
 	background-color: #31A3DD;
     color: #FFFFFF;
 }
-.enigma_dropcape_simple span {
+.alpe_dropcape_simple span {
     color: #31A3DD;
 }
-.enigma_dropcape_circle span {
+.alpe_dropcape_circle span {
 	background-color: #31A3DD;
     color: #FFFFFF;
 }
@@ -555,7 +555,7 @@ border: 1px solid #31A3DD !important;
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 background-color: #31A3DD !important;
 }
-.enigma_blockquote_section blockquote {
+.alpe_blockquote_section blockquote {
 border-left: 5px solid #31A3DD ;
 }
 blockquote {
@@ -565,5 +565,5 @@ blockquote {
 background-color:#31A3DD;
 color: #fff;
 }
-.enigma_footer_widget_column ul li a ,.enigma_footer_widget_column ul#recentcomments li {color: #f2f2f2;}
-.enigma_footer_widget_column ul li a:hover{color: #31a3dd;}
+.alpe_footer_widget_column ul li a ,.alpe_footer_widget_column ul#recentcomments li {color: #f2f2f2;}
+.alpe_footer_widget_column ul li a:hover{color: #31a3dd;}
