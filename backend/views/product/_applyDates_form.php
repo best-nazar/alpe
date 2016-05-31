@@ -38,6 +38,14 @@ use unclead\widgets\MultipleInput;
                 'class' => 'form-applyDates',
             ]
         ],
+        [
+            'name'  => 'price',
+            'title' => 'Ціна',
+            'defaultValue' => '0',
+            'options' => [
+                'class' => 'form-applyDates',
+            ]
+        ],
     ]
 ]);?>
 

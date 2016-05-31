@@ -2,8 +2,6 @@
 
 use frontend\assets\HomePageAsset;
 use yii\helpers\Url;
-use common\widgets\Charter;
-use common\models\helper;
 
 /* @var $this yii\web\View */
 /* @var $tizer */
@@ -95,18 +93,5 @@ HomePageAsset::register($this);
             </div>
         </div> <!-- One of three columns -->
 <div class="col-sm-2">
-    <!-- side widget-->
-    <?=Charter::widget([
-        'type' => helper::PRODUCT_TYPE_AVTO,
-        'header' => 'Автобусні чартери'
-    ])?>
-
-    <?=Charter::widget([
-        'type' => helper::PRODUCT_TYPE_AVIA,
-        'header' => 'Авіа чартери'
-    ])?>
-    <!-- side widget-->
-    <!-- weather widget -->
-
-    <!-- weather widget -->
+<?= $this->render('_side_widgets')?>
 </div>

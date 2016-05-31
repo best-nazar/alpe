@@ -133,6 +133,7 @@ class ProductController extends Controller
                     $applyDates->product_id = $product->id;
                     $applyDates->begin_date = strtotime ($dates['begin_date']);
                     $applyDates->end_date = strtotime ($dates['end_date']);
+                    $applyDates->price = $dates['price'];
                     $applyDates->save();
                 }
 
@@ -164,6 +165,7 @@ class ProductController extends Controller
      */
     public function actionUpdate($id)
     {
+        $errors = [];
         $product = $this->findModel($id);
         $productOptions = Productoptions::find()
             ->where(['product'=>$id])
@@ -199,7 +201,7 @@ class ProductController extends Controller
             ){
 
             if ($product->validate()){
-                $product->save();
+                if (!$product->save()) $errors[]=$product->errors;
 
                 if (Applydates::deleteAll('product_id ='. $id)) {
                     // saving Apply dates
@@ -208,18 +210,20 @@ class ProductController extends Controller
                         $applyDate->product_id = $product->id;
                         $applyDate->begin_date = strtotime($dates['begin_date']);
                         $applyDate->end_date = strtotime($dates['end_date']);
-                        $applyDate->save();
+                        $applyDate->price = $dates['price'];
+
+                        if (!$applyDate->save()) $errors[] =$applyDates->errors;
                     }
                 }
             }
             if ($product->teg0->validate()) {
-                $product->teg0->save();
+                if (!$product->teg0->save()) $errors[] = $product->errors;
             }
             if ($product->options0->validate()) {
-                $product->options0->save();
+                if (!$product->options0->save()) $errors[] = $product->errors;
             }
             if ($productOptions->validate()) {
-                $productOptions->save();
+                if (!$productOptions->save()) $errors[] = $productOptions->errors;
             }
             return $this->redirect(['view', 'id' => $product->id]);
         } else {

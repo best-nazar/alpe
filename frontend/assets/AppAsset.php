@@ -18,7 +18,7 @@ class AppAsset extends AssetBundle
         'css/layout-responsive.css',
         'css/media-responsive.css',
         'css/animations.css',
-        'css/theme-animtae.css',
+        //'css/theme-animtae.css',
         'css/spectrum.css',
         //'css/style-switcher.css',
         'css/site.css',

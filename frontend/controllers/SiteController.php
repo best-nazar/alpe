@@ -301,6 +301,19 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionBooking(){
+        $data = Product::find()
+            ->joinWith(['options0'])
+            ->where(['>=','actual_date',time()]) // show before actual_date
+            ->andWhere(['options.show_in_other'=>1]) // show booking
+            ->orderBy('name')
+            ->all();
+
+            return $this->render('showByBooking', [
+                'data' => $data,
+            ]);
+    }
+
     /**
      * Show list of Excursions
      * @return string

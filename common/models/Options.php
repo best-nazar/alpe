@@ -45,7 +45,7 @@ class Options extends \yii\db\ActiveRecord
             'show_in_teaser' => 'Показувати в Тізері',
             'show_in_dash' => 'Показувати на панелі',
             'show_in_homepage' => 'Виводити на головній сторінці',
-            'show_in_other' => 'Показувати у блоці',
+            'show_in_other' => 'Раннє бронювання',
         ];
     }
 

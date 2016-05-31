@@ -24,7 +24,7 @@ HomePageAsset::register($this);
 ?>
 <?php
 $productStartDate = \common\models\helper::productStartDate($model); // applyDated begin_date timestamp
-
+//$productCurrency = $model->currency0->label;
 ?>
 <div class="col-sm-8">
 
@@ -90,6 +90,13 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                                 'columns' => [
                                     'begin_date:date',
                                     'end_date:date',
+                                    [
+                                        'label' => 'Ціна',
+                                        'value' => function ($model, $index, $widget) {
+                                            $productCurrency = \common\models\Product::findOne($model->product_id);
+                                            return $model->price.' '.$productCurrency->currency0->label;
+                                        },
+                                    ]
                                 ],
                                 'layout' => '{items}'
                             ]),
@@ -112,7 +119,8 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
         </div>
     </div>
 
-<?php \common\models\helper::productOptionsAttributes($model->productoptions[0]) ?>
+<?php
+//\common\models\helper::productOptionsAttributes($model->productoptions[0])?>
 
 </div><!-- col -->
 <div class="col-sm-2">

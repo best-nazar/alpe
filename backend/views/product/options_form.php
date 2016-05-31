@@ -7,4 +7,5 @@
     <?= $form->field($options, 'show_in_teaser')->checkbox() ?>
     <?= $form->field($options, 'show_in_dash')->checkbox()?>
     <?= $form->field($options, 'show_in_homepage')->checkbox() ?>
+    <?= $form->field($options, 'show_in_other')->checkbox()?>
 </div>

@@ -100,6 +100,10 @@ $this->params['breadcrumbs'][] = $this->title;
                             'attribute' => 'show_in_homepage',
                             'value' => $model->options0->show_in_homepage == 1 ? 'Так' : 'Ні'
                         ],
+                        [
+                            'attribute' => 'show_in_other',
+                            'value' => $model->options0->show_in_other == 1 ? 'Так' : 'Ні'
+                        ],
                     ]
                 ]),
             ],
@@ -112,6 +116,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 'begin_date:date',
                 'end_date:date',
+                'price'
             ],
 
             ]),

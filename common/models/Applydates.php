@@ -11,6 +11,7 @@ use Yii;
  * @property integer $product_id
  * @property integer $begin_date
  * @property integer $end_date
+ * @property string $price
  *
  * @property Product $product
  */
@@ -32,6 +33,7 @@ class Applydates extends \yii\db\ActiveRecord
         return [
             [['product_id'], 'required'],
             [['product_id', 'begin_date', 'end_date'], 'integer'],
+            [['price'], 'number'],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }
@@ -46,6 +48,7 @@ class Applydates extends \yii\db\ActiveRecord
             'product_id' => 'Product ID',
             'begin_date' => 'Початок',
             'end_date' => 'Кінець',
+            'price' => 'Ціна'
         ];
     }
 
