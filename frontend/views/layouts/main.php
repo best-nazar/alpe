@@ -159,11 +159,12 @@ AppAsset::register($this);
                     <h3 class="alpe_footer_widget_title">Контакти<div class="alpe-footer-separator" id=""></div></h3>
                     <address>
                         <p><i class="fa fa-phone"></i> +38 (032) 232-29-01</p>
-                        <p><i class="fa fa-envelope"></i>79017 Львів</p>
+                        <p><i class="fa fa-envelope"></i><a href="mailto:office@alpeadriatour.com">office@alpeadriatour.com</a></p>
+                        <p><i class="fa fa-globe"></i>79017 Львів</p>
                         <p><i class="fa fa-globe"></i>вул.Водогінна 2/322</p>
                         <p><i class="fa fa-clock-o"></i> Пн-Пт 10:00 - 18:00</p>
                         <p><i class="fa fa-map-marker"></i> <a href="mailto:office@alpeadriatour.com">office@alpeadriatour.com</a></p>
-                        <p><i class="fa fa-newspaper-o"></i>
+                        <p style="display: none"><i class="fa fa-newspaper-o"></i>
                             <?php if (Yii::$app->user->isGuest) {
                                 echo Html::a('Реєстрація',['/site/signup']);
                             } else {

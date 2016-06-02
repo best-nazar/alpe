@@ -11,6 +11,7 @@ use yii\grid\GridView;
 use yii\bootstrap\Tabs;
 use common\widgets\Stars;
 use yii\data\ArrayDataProvider;
+use yii\helpers\Url;
 
 $country = \common\models\helper::getCountry($model->country);
 $type = $model->type0->name;
@@ -63,7 +64,8 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
 
                                     [                      // the owner name of the model
                                         'label' => 'Локація',
-                                        'value' => $model->country0->name. $model->region1. $model->region2,
+                                        'value' => '<b>'.$model->country0->name.'</b> ' .$model->region1.' ' .$model->region2,
+                                        'format' =>'html'
                                     ],
                                     [                      // the owner name of the model
                                         'label' => 'Ціна',
@@ -111,7 +113,7 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                 ]);?>
 
                 <div class="blog-post-details-item">
-                    <a class="alpe_blog_read_btn" href="/"><i class="fa fa-plus-circle"></i>Замовити</a></div>
+                    <a class="alpe_blog_read_btn" href="<?=Url::to(['site/new-order', 'id'=>$model->id])?>"><i class="fa fa-plus-circle"></i>Замовити</a></div>
                 </div>
             <div class="pull-left">
                 <a class="back_btn" href="<?=Yii::$app->request->referrer?>"><i class="fa fa-backward"></i> Повернутись </a></div>

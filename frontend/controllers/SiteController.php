@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\helper;
+use common\models\Orders;
 use common\models\Product;
 use common\models\ProductSearch;
 use Yii;
@@ -386,5 +387,46 @@ class SiteController extends Controller
         } else {
             throw new HttpException(404 ,'Не знайдено');
         }
+    }
+
+    /**
+     * Frontend Customers make an order for product
+     * @param $id
+     * @return \yii\web\Response
+     */
+    public function actionNewOrder($id){
+
+        $model = new Orders();
+        $model->selected_product = $id;
+        $model->order_status = helper::ORDER_STATUS;
+        $product = Product::findOne($id);
+
+        $message = 'Обрана дата:';
+
+        foreach ($product->applydates as $data){
+            $message .= date('d.m.Y',$data->begin_date) . ' - '. date('d.m.Y',$data->end_date);
+        }
+        $model->message = $message;
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate())
+        {
+            if ($model->save()){
+
+                if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+                    Yii::$app->session->setFlash('info', 'Дякуємо за замовлення. Очікуйте дзвінка нашого менеджера.');
+                }
+                return $this->redirect(['site/show-product', 'id' => $product->id]);
+            }
+        } else {
+            if ($model->hasErrors()) {
+                Yii::$app->session->setFlash('error', json_encode($model->errors));
+            }
+        }
+
+        return $this->render('orderForm',[
+            'model' => $model,
+            'product'=> $product
+        ]);
+
     }
 }

@@ -44,7 +44,9 @@ return [
             'rules' => [
             ],
         ],
-
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+        ],
     ],
     'as AccessBehavior' => [
         'class' => 'backend\models\AccessBehavior'

@@ -1,4 +1,4 @@
 <?php
 return [
-    'adminEmail' => 'office@alpeadriatour.com',
+    //'adminEmail' => 'office@alpeadriatour.com',
 ];

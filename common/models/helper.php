@@ -17,6 +17,7 @@ class helper {
     CONST PRODUCT_TYPE_AVTO = 4;
     CONST IMAGE_WIDTH = 1000;
     CONST IMAGE_HEIGHT = 400;
+    CONST ORDER_STATUS = 1; // Очікує
 
     /**
      * @param $count of month to add to Now
@@ -61,7 +62,8 @@ class helper {
      * @return mixed|null
      */
     public static function productStartDate($model){
-        $applyDates = array_shift( ArrayHelper::map($model->applydates,'id','begin_date') );
+        $singleDate =  ArrayHelper::map($model->applydates,'id','begin_date') ;
+        $applyDates = array_shift( $singleDate );
         return count($applyDates)>0 ? $applyDates : null;
     }
 
