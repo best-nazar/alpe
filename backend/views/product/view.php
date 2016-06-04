@@ -29,6 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
         <?= Html::a('Повернутись', ['index'], ['class'=> 'btn btn-default'])?>
+        <?= Html::a('Створити новий', ['create'], ['class'=>'btn btn-success']);?>
     </p>
     <?php echo Tabs::widget([
         'items' => [
@@ -44,6 +45,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         'region1',
                         'region2',
+                        [
+                          'label' => 'Вид',
+                            'value' => $model->getSubType(),
+                        ],
                         [                      // the owner name of the model
                             'label' => 'Тип',
                             'value' => $model->type0->name,

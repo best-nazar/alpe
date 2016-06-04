@@ -29,10 +29,10 @@ use dosamigos\ckeditor\CKEditor;
             <td><?= $form->field($product, 'currency')->dropDownList($currency) ?></td>
         </tr>
         <tr>
+            <td><?= $form->field($product, 'sub_type')->dropDownList($sub_type) ?></td>
             <td><?= Html::label('Актуально до :')?>
                 <?= DatePicker::widget(['name' => 'actual_date', 'language'=>Yii::$app->language, 'value'=>$actualPeriod, 'options' => ['class' => 'form-control']]) ?></td>
             <td>*до цього часу продукт відображатиметься на сайті</td>
-            <td> </td>
         </tr>
         </tbody>
     </table>
@@ -42,7 +42,7 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($product, 'description')->widget(CKEditor::className(), [
         'options' => ['rows' => 8],
-        'preset' => 'basic'
+        'preset' => 'Standard-All'
     ]) ?>
 
 </div>

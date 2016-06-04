@@ -32,6 +32,7 @@ $actualPeriod = \common\models\helper::addMonthToNow(Yii::$app->params['actualPe
             'currency' => $currency,
             'form' => $form,
             'actualPeriod' =>$actualPeriod,
+            'sub_type'=>$sub_type,
         ]) ,
     ],
     [

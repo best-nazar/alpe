@@ -18,7 +18,7 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($model, 'content')->widget(CKEditor::className(), [
         'options' => ['rows' => 8],
-        'preset' => 'basic'
+        'preset' => 'Standard-All'
     ])?>
 
     <div class="form-group">

@@ -6,6 +6,7 @@ use backend\models\imageFactory;
 use common\models\Applydates;
 use common\models\Country;
 use common\models\Currency;
+use common\models\helper;
 use common\models\Images;
 use common\models\Options;
 use common\models\Productoptions;
@@ -106,6 +107,10 @@ class ProductController extends Controller
             ->all();
         $currencyMap = ArrayHelper::map($currency, 'id', 'code');
 
+        $sub_type = [
+            helper::TYPE_HOTEL => 'Готель',
+            helper::TYPE_APARTMENT => 'Апартаменти',
+        ];
 
         if ( $product->load(Yii::$app->request->post())  &&
             $productOptions->load(Yii::$app->request->post())  &&
@@ -152,7 +157,8 @@ class ProductController extends Controller
                 'productOptions' => $productOptions,
                 'teg' => $teg,
                 'options' => $options,
-                'applyDates' => ArrayHelper::map($applyDates, 'begin_date', 'end_date')
+                'applyDates' => ArrayHelper::map($applyDates, 'begin_date', 'end_date'),
+                'sub_type'=>$sub_type,
             ]);
         }
     }
@@ -191,6 +197,10 @@ class ProductController extends Controller
         $currencyMap = ArrayHelper::map($currency, 'id', 'code');
         $countriesMap = ArrayHelper::map($countries, 'id', 'name'); // (where 'id' becomes the value and 'name' the name of the value which will be displayed)
         $typesMap = ArrayHelper::map($types, 'id', 'name');
+        $sub_type = [
+            helper::TYPE_HOTEL => 'Готель',
+            helper::TYPE_APARTMENT => 'Апартаменти',
+        ];
 
         if (
                 $product->load(Yii::$app->request->post())  &&
@@ -232,7 +242,8 @@ class ProductController extends Controller
                 'countries' => $countriesMap,
                 'types' => $typesMap,
                 'currency' => $currencyMap,
-                'applyDates' => $applyDates
+                'applyDates' => $applyDates,
+                'sub_type' => $sub_type,
             ]);
         }
     }

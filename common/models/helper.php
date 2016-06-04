@@ -8,7 +8,7 @@ namespace common\models;
 use yii\helpers\ArrayHelper;
 
 class helper {
-    const SHOW_NUMBER_OF_FOOTER_PRODUCT = 4;
+    const SHOW_NUMBER_OF_FOOTER_PRODUCT = 3;
     const PRODUCT_PER_PAGE = 10;
     CONST PRODUCT_TYPE_TOUR = 1; // id of types table
     CONST PRODUCT_TYPE_EXCURSIONS = 5; // id of table Types
@@ -18,6 +18,9 @@ class helper {
     CONST IMAGE_WIDTH = 1000;
     CONST IMAGE_HEIGHT = 400;
     CONST ORDER_STATUS = 1; // Очікує
+
+    CONST TYPE_HOTEL =0; //Sub_type
+    CONST TYPE_APARTMENT = 1; // sub_type
 
     /**
      * @param $count of month to add to Now
@@ -110,5 +113,21 @@ class helper {
      */
     public static function getTypeName($id){
         return Types::findOne($id);
+    }
+
+    /**
+     * Recursive in_array analog function for multidimensional arrays
+     * @param $needle
+     * @param $haystack
+     * @param bool|false $strict
+     * @return bool
+     */
+    public static function in_array_r($needle, $haystack, $strict = false) {
+        foreach ($haystack as $item) {
+            if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && self::in_array_r($needle, $item, $strict))) {
+                return true;
+            }
+        }
+        return false;
     }
 } 

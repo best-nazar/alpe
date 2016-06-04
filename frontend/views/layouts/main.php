@@ -57,9 +57,10 @@ AppAsset::register($this);
                         <li title="" data-original-title=""><i class="fa fa-phone"></i><a href="tel:+380322322901">+38 (032) 232-29-01</a></li>
                     </ul>
                     <ul class="social">
-                        <a href="https://facebook.com/"><li data-original-title="Facebook" class="facebook" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-facebook"></i></li></a>
-                        <a href="http://linkedin.com/"><li data-original-title="Linkedin" class="linkedin" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-linkedin"></i></li></a>
-                        <a href="https://www.youtube.com/"><li data-original-title="Youtube" class="youtube" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-youtube"></i></li></a>
+                        <a href="https://facebook.com/Альпи-Адріа-Тур-1490290177946348" target="_blank"><li data-original-title="Facebook" class="facebook" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-facebook"></i></li></a>
+                        <a href="/site/contact#w1-tab1"><li data-original-title="напишіть нам" class="dribbble" data-toggle="tooltip" data-placement="top" title="Напишіть нам"><i class="fa fa-envelope"></i></li></a>
+                        <!--<a href="http://linkedin.com/"><li data-original-title="Linkedin" class="linkedin" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-linkedin"></i></li></a>
+                        <a href="https://www.youtube.com/"><li data-original-title="Youtube" class="youtube" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-youtube"></i></li></a>-->
                     </ul>
                 </div>
             </div>
@@ -152,7 +153,7 @@ AppAsset::register($this);
                 </div>
                 <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
                     <h3 class="alpe_footer_widget_title">Ми у Facebook<div class="alpe-footer-separator" id=""></div></h3>
-                    <?=FacebookPlugin::widget(['type'=>FacebookPlugin::PAGE, 'settings' => ['href'=>'http://facebook.com/alpeadriatour']]);?>
+                    <?=FacebookPlugin::widget(['type'=>FacebookPlugin::PAGE, 'settings' => ['href'=>'http://facebook.com/Альпи-Адріа-Тур-1490290177946348']]);?>
                 </div>
 
                 <div class="col-md-3 col-sm-6 alpe_footer_widget_column">
@@ -188,16 +189,17 @@ AppAsset::register($this);
 			</p>
 						<div class="alpe_footer_social_div">
                 <ul class="social">
-                    <a href="https://facebook.com/"><li data-original-title="Facebook" class="facebook" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-facebook"></i></li></a>
-                    <a href="https://twitter.com/"><li data-original-title="Twiiter" class="twitter" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-twitter"></i></li></a>
-                    <a href="https://dribbble.com/"><li data-original-title="Dribble" class="dribbble" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-dribbble"></i></li></a>
-                    <a href="http://linkedin.com/"><li data-original-title="Linkedin" class="linkedin" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-linkedin"></i></li></a>
-                    <a href="https://www.youtube.com/"><li data-original-title="Youtube" class="youtube" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-youtube"></i></li></a>
+                    <a href="https://facebook.com/Альпи-Адріа-Тур-1490290177946348" target="_blank"><li data-original-title="Facebook" class="facebook" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-facebook"></i></li></a>
+                    <a href="/site/contact#w1-tab1"><li data-original-title="напишіть нам" class="dribbble" data-toggle="tooltip" data-placement="top" title="Напишіть нам"><i class="fa fa-envelope"></i></li></a>
+                    <!-- <a href="https://twitter.com/"><li data-original-title="Twiiter" class="twitter" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-twitter"></i></li></a>
+                     <a href="https://dribbble.com/"><li data-original-title="Dribble" class="dribbble" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-dribbble"></i></li></a>
+                     <a href="http://linkedin.com/"><li data-original-title="Linkedin" class="linkedin" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-linkedin"></i></li></a>
+                     <a href="https://www.youtube.com/"><li data-original-title="Youtube" class="youtube" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-youtube"></i></li></a>
 
-                    <a href="https://plus.google.com/"><li data-original-title="Googleplus" class="Googleplus" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-google"></i></li></a>
-                    <a href="https://www.flickr.com/"><li data-original-title="Flicker" class="flicker" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-flickr"></i></li></a>
+                     <a href="https://plus.google.com/"><li data-original-title="Googleplus" class="Googleplus" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-google"></i></li></a>
+                     <a href="https://www.flickr.com/"><li data-original-title="Flicker" class="flicker" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-flickr"></i></li></a>
 
-                    <a href="https://instagram.com/"><li data-original-title="Instagram" class="instagram" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-instagram"></i></li></a>
+                     <a href="https://instagram.com/"><li data-original-title="Instagram" class="instagram" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-instagram"></i></li></a>-->
                 </ul>
             </div>
         </div>

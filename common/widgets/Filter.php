@@ -6,6 +6,7 @@
 namespace common\widgets;
 
 use yii\helpers\Html;
+use common\models\helper;
 
 class Filter extends \yii\bootstrap\Widget {
 
@@ -25,7 +26,7 @@ class Filter extends \yii\bootstrap\Widget {
     private function filterArray(){
         $arr =[];
         foreach ($this->model as $data){
-            if (!in_array($data[$this->field],$arr)){
+            if (!helper::in_array_r($data[$this->field],$arr)){
                 if ($data[$this->field] !='') {
                     $arr[] = [
                         'label' => $data[$this->field],

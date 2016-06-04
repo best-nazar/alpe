@@ -14,6 +14,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $region1
  * @property string $region2
  * @property integer $type
+ * @property integer $sub_type
  * @property string $price
  * @property integer $currency
  * @property integer $actual_date
@@ -53,7 +54,7 @@ class Product extends ActiveRecord
         return [
             [['country', 'type', 'currency', 'actual_date', 'options', 'name', 'teg','price'], 'required'],
             [['country', 'type', 'currency', 'actual_date', 'options', 'status', 'teg', 'created_at', 'updated_at'], 'integer'],
-            [['price'], 'number'],
+            [['price', 'sub_type'], 'number'],
             [['description'], 'string'],
             [['region1', 'region2'], 'string', 'max' => 128],
             [['name', 'short_desc'], 'string', 'max' => 255],
@@ -77,6 +78,7 @@ class Product extends ActiveRecord
             'region1' => 'Регіон 1*',
             'region2' => 'Регіон 2*',
             'type' => 'Тип',
+            'sub_type' => 'Вид',
             'price' => 'Ціна',
             'currency' => 'Валюта',
             'actual_date' => 'Актуальний до:',
@@ -177,5 +179,9 @@ class Product extends ActiveRecord
                 ],
             ],
         ];
+    }
+
+    public function getSubType(){
+        return $this->sub_type == helper::TYPE_HOTEL ? 'Готель' : 'Апартаменти';
     }
 }
