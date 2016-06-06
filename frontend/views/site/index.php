@@ -48,7 +48,7 @@ HomePageAsset::register($this);
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="alpe_heading_title">
-                            <h3>Рекоменндуємо</h3>
+                            <h3>Рекомендуємо</h3>
                         </div>
                     </div>
                 </div>

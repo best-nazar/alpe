@@ -58,6 +58,7 @@ AppAsset::register($this);
                     </ul>
                     <ul class="social">
                         <a href="https://facebook.com/Альпи-Адріа-Тур-1490290177946348" target="_blank"><li data-original-title="Facebook" class="facebook" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-facebook"></i></li></a>
+                        <a href="http://vk.com/alpeadriatour" target="_blank"><li data-original-title="Vk" class="vk" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-vk"></i></li></a>
                         <a href="/site/contact#w1-tab1"><li data-original-title="напишіть нам" class="dribbble" data-toggle="tooltip" data-placement="top" title="Напишіть нам"><i class="fa fa-envelope"></i></li></a>
                         <!--<a href="http://linkedin.com/"><li data-original-title="Linkedin" class="linkedin" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-linkedin"></i></li></a>
                         <a href="https://www.youtube.com/"><li data-original-title="Youtube" class="youtube" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-youtube"></i></li></a>-->
@@ -185,11 +186,12 @@ AppAsset::register($this);
     <div class="alpe_footer_area">
         <div class="container">
             <div class="col-md-12">
-                <p class="alpe_footer_copyright_info wl_rtl">туристична фірма Альпе Адріа Тур 2016&nbsp;<a rel="nofollow" href="#</a>
+                <p class="alpe_footer_copyright_info wl_rtl">туристична фірма Альпи Адріа-Тур <?=date('Y', time())?>&nbsp;<a rel="nofollow" href="#</a>
 			</p>
 						<div class="alpe_footer_social_div">
                 <ul class="social">
                     <a href="https://facebook.com/Альпи-Адріа-Тур-1490290177946348" target="_blank"><li data-original-title="Facebook" class="facebook" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-facebook"></i></li></a>
+                    <a href="http://vk.com/alpeadriatour" target="_blank"><li data-original-title="Vk" class="vk" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-vk"></i></li></a>
                     <a href="/site/contact#w1-tab1"><li data-original-title="напишіть нам" class="dribbble" data-toggle="tooltip" data-placement="top" title="Напишіть нам"><i class="fa fa-envelope"></i></li></a>
                     <!-- <a href="https://twitter.com/"><li data-original-title="Twiiter" class="twitter" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-twitter"></i></li></a>
                      <a href="https://dribbble.com/"><li data-original-title="Dribble" class="dribbble" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-dribbble"></i></li></a>

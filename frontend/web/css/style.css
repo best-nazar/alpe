@@ -140,6 +140,15 @@ line-height: 26px;
 	background-position: 0 -100%;
 	background-color:#069;
 }
+/* vk */
+.social li.vk{
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, transparent 50%, #069 50%);
+}
+.social li.vk:hover{
+    background-position: 0 -100%;
+    background-color:#069;
+}
 /* youtube */
 .social li.youtube{
 	background-size: 100% 200%;

@@ -14,6 +14,7 @@
 use yii\helpers\Url;
 use frontend\assets\HomePageAsset;
 use common\widgets\Filter;
+use common\widgets\TypeFilter;
 
 HomePageAsset::register($this);
 
@@ -70,18 +71,25 @@ $this->params['breadcrumbs'][] = $type->name;
 
 </div>
 <div class="col-sm-2">
-    <div class="product-filter">
+    <div class="product-filter-region1">
         <?=Filter::widget([
             'model'=>$model,
             'mainUrl'=>Url::to(['site/by-country', 'countryId' => Yii::$app->request->getQueryParam('countryId')]),
             'field' => 'region1'
         ])?>
     </div>
-    <div class="product-filter">
+    <div class="product-filter-region2">
         <?=Filter::widget([
             'model'=>$data,
             'mainUrl'=>Url::to(['site/by-country', 'countryId' => Yii::$app->request->getQueryParam('countryId')]),
             'field' => 'region2',
+        ])?>
+    </div>
+    <div class="product-filter-type">
+        <?=TypeFilter::widget([
+            'model'=>$data,
+            'mainUrl'=>Url::to(['site/by-country', 'countryId' => Yii::$app->request->getQueryParam('countryId')]),
+            'field' => 'sub_type',
         ])?>
     </div>
 </div>

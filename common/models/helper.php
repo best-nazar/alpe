@@ -19,8 +19,9 @@ class helper {
     CONST IMAGE_HEIGHT = 400;
     CONST ORDER_STATUS = 1; // Очікує
 
-    CONST TYPE_HOTEL =0; //Sub_type
     CONST TYPE_APARTMENT = 1; // sub_type
+    CONST TYPE_HOTEL =2; //Sub_type
+
 
     /**
      * @param $count of month to add to Now
@@ -129,5 +130,14 @@ class helper {
             }
         }
         return false;
+    }
+
+    public static function getSybTypeName($id){
+        $arr = [
+            self::TYPE_HOTEL => 'Готель',
+            self::TYPE_APARTMENT => 'Апартаменти',
+        ];
+
+        return $arr[$id];
     }
 } 

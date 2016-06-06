@@ -285,8 +285,9 @@ class SiteController extends Controller
             ->andWhere(['>=','actual_date',time()]) // show before actual_date
             ->andWhere(['type'=>helper::PRODUCT_TYPE_TOUR])
             ->filterWhere(['region1'=>Yii::$app->request->getQueryParam('region1')])
-            ->filterWhere(['region2'=>Yii::$app->request->getQueryParam('region2')])
-            ->orderBy('name')
+            ->andFilterWhere(['region2'=>Yii::$app->request->getQueryParam('region2')])
+            ->andFilterWhere(['sub_type'=>Yii::$app->request->getQueryParam('sub_type')])
+            ->orderBy('created_at','name')
             ->all();
 
         $model = Product::find()

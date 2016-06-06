@@ -9,13 +9,12 @@ use common\widgets\Charter;
 use common\models\helper;
 ?>
 
-<div class="col-sm-8">
+<div class="col-sm-10">
     <?=PageOutput::widget([
         'page_name' => $page_name
     ])?>
 </div>
-<div class="col-sm-2">
-    <!-- side widget-->
+<!--<div class="col-sm-2">
     <?=Charter::widget([
         'type' => helper::PRODUCT_TYPE_AVTO,
         'header' => 'Автобусні чартери'
@@ -25,8 +24,4 @@ use common\models\helper;
         'type' => helper::PRODUCT_TYPE_AVIA,
         'header' => 'Авіа чартери'
     ])?>
-    <!-- side widget-->
-    <!-- weather widget -->
-
-    <!-- weather widget -->
-</div>
+</div>-->
