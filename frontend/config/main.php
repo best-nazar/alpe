@@ -36,6 +36,7 @@ return [
             'rules' => [
                 'product/<id:\d+>' => 'site/show-product',
                 'country/<countryId:\d+>' => 'site/by-country',
+                'site/travel-info/<countryCode>' => 'site/travel-info',
             ],
         ],
         'formatter' => [

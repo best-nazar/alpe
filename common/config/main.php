@@ -14,6 +14,6 @@ return [
             'timeFormat' => 'php:H:i:s',
         ],
     ],
-    'name' => 'AlperAdria Tour', // my site name
+    'name' => 'АЛЬПИ АДРІА-Тур', // my site name
 
 ];

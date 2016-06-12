@@ -47,7 +47,7 @@ AppAsset::register($this);
                 <div class="col-md-6 col-sm-12 wl_rtl">
                     <div class="logo">
                         <a href="<?=Url::home()?>" title="AlpeAdria Tour" rel="home">
-                            AlpeAdria Tour						</a>
+                            <?=Yii::$app->name?>						</a>
                         <p>Travel with us!</p>
                     </div>
                 </div>
@@ -78,20 +78,30 @@ AppAsset::register($this);
         ],
     ]);
 
+    /**
+     * Fill submenu
+     */
+    $itemCountry =[];
+    foreach (\common\models\helper::getCountryList() as $country){
+        $itemCountry[] = ['label' => $country->name, 'url' => Url::to(['site/travel-info', 'countryCode'=>$country->code]) ];
+    }
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Домашня', 'url' => ['/site/index']],
             ['label' => 'Підбір туру', 'url' => ['/site/tour-select'],
                 'items' => [
-                    ['label' => 'Екскурсії', 'url' => ['/site/excursions'] ],
+                    ['label' => 'Екскурсійні тури', 'url' => ['/site/excursions'] ],
                     ['label' => 'Всі країни', 'url' => ['/site/all-countries']],
                     ['label' => 'Круїзи', 'url' => ['/site/cruises']],
                     ['label' => 'Активний відпочинок', 'url' => ['/site/vacations']],
                 ],
             ],
             ['label' => 'Раннє бронювання', 'url' => ['/site/booking']],
-            ['label' => 'Інформація подорожуючому', 'url' => ['/site/travel-info']],
+            ['label' => 'Інформація подорожуючому', 'url' => ['/site/travel-info'],
+                'items' => $itemCountry,
+            ],
             ['label' => 'Про нас', 'url' => ['/site/about']],
             ['label' => 'Контакти', 'url' => ['/site/contact']],
         ],
@@ -161,11 +171,12 @@ AppAsset::register($this);
                     <h3 class="alpe_footer_widget_title">Контакти<div class="alpe-footer-separator" id=""></div></h3>
                     <address>
                         <p><i class="fa fa-phone"></i> +38 (032) 232-29-01</p>
+                        <p><i class="fa fa-phone"></i> +38 (067) 779 20 35</p>
                         <p><i class="fa fa-envelope"></i><a href="mailto:office@alpeadriatour.com">office@alpeadriatour.com</a></p>
                         <p><i class="fa fa-globe"></i>79017 Львів</p>
                         <p><i class="fa fa-globe"></i>вул.Водогінна 2/322</p>
                         <p><i class="fa fa-clock-o"></i> Пн-Пт 10:00 - 18:00</p>
-                        <p><i class="fa fa-map-marker"></i> <a href="mailto:office@alpeadriatour.com">office@alpeadriatour.com</a></p>
+
                         <p style="display: none"><i class="fa fa-newspaper-o"></i>
                             <?php if (Yii::$app->user->isGuest) {
                                 echo Html::a('Реєстрація',['/site/signup']);

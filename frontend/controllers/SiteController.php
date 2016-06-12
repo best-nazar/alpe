@@ -6,6 +6,7 @@ use common\models\Orders;
 use common\models\Product;
 use common\models\ProductSearch;
 use Yii;
+use yii\base\Exception;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -359,11 +360,19 @@ class SiteController extends Controller
 
     /**
      * Static page
+     * @param $countryCode
+     * @throws \yii\web\NotFoundHttpException
      * @return string
      */
-    public function actionTravelInfo(){
+    public function actionTravelInfo($countryCode=null)
+    {
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $countryCode) == 1) {
+                // string only contain the a to z , A to Z, 0 to 9
+            throw new \yii\web\NotFoundHttpException('Сторінка не знайдена !');
+        }
         return $this->render('simplePage',[
-            'page_name' => 'travel-info'
+            'page_name' => 'travel-info',
+            'countryCode' => $countryCode,
         ]);
     }
 

@@ -12,12 +12,19 @@ class PageOutput extends \yii\bootstrap\Widget
     public $page_name;
     public $header_class;
     public $body_class;
+    public $countryCode;
 
     public function init()
     {
         parent::init();
 
-        $page = Page::findOne(['page_name'=>$this->page_name]);
+        if ($this->countryCode){
+            $pageToFind = $this->page_name.'-'.strtolower($this->countryCode);
+        } else {
+            $pageToFind = $this->page_name;
+        }
+
+        $page = Page::findOne([ 'page_name'=> $pageToFind ]);
         if ($page) {
             echo '<h3 class="' . $this->header_class . '">';
             echo $page->title;

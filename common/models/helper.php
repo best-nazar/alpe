@@ -108,6 +108,15 @@ class helper {
     }
 
     /**
+     * Find Country by country code
+     * @param $code
+     * @return null|static
+     */
+    public static function getCountryByCode($code){
+        return Country::findOne([ 'code'=> $code]);
+    }
+
+    /**
      * Find Type of Product und return object
      * @param $id
      * @return null|static
@@ -132,6 +141,11 @@ class helper {
         return false;
     }
 
+    /**
+     *  Get Sub Type for Product
+     * @param $id
+     * @return mixed
+     */
     public static function getSybTypeName($id){
         $arr = [
             self::TYPE_HOTEL => 'Готель',
@@ -139,5 +153,15 @@ class helper {
         ];
 
         return $arr[$id];
+    }
+
+    /**
+     * Find all country list
+     * @return static[]
+     */
+    public static function getCountryList(){
+        return Country::find()
+            ->orderBy(['name'=>SORT_ASC])
+            ->all();
     }
 } 
