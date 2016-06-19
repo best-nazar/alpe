@@ -82,6 +82,7 @@ class ProductController extends Controller
      */
     public function actionCreate()
     {
+        $error = [];
         $product = new Product();
         $productOptions = new Productoptions();
         $teg = new Teg();
@@ -125,12 +126,16 @@ class ProductController extends Controller
                         if ($options->save()) {
                             $product->options = $options->id;
                             $product->teg = $tegId;
+                        } else {
+                            $error[] = $options->getErrors();
                         }
                 }
 
             if ($product->save()) {
                 $productOptions->product = $product->id;
-                $productOptions->save();
+                if (!$productOptions->save()) {
+                    $error[] = $productOptions->getErrors();
+                };
 
                 // saving Apply dates
                 foreach (Yii::$app->request->getBodyParam('applyDates') as $dates) {
@@ -139,16 +144,27 @@ class ProductController extends Controller
                     $applyDates->begin_date = strtotime ($dates['begin_date']);
                     $applyDates->end_date = strtotime ($dates['end_date']);
                     $applyDates->price = $dates['price'];
+                    $applyDates->place_type = $dates['place_type'];
                     $applyDates->save();
+                    if ($applyDates->hasErrors()) {
+                        $error[] = $applyDates->getErrors();
+
+                    };
+                }
+                if (count($error)>0)
+                {
+                    foreach ($error as $err) {
+                        Yii::$app->session->setFlash('error', 'Помилка :' . helper::convert_multi_array($err) );
+                    }
+                } else {
+                    return $this->redirect(['view', 'id' => $product->id]);
                 }
 
-                return $this->redirect(['view', 'id' => $product->id]);
-
             } else {
-                throw new ErrorException (Json::encode($product->errors));
+                $error[] = $product->getErrors();
             }
 
-        } else {
+        }
             return $this->render('create', [
                 'product' => $product,
                 'countries' => $countriesMap,
@@ -161,7 +177,7 @@ class ProductController extends Controller
                 'sub_type'=>$sub_type,
             ]);
         }
-    }
+
 
     /**
      * Updates an existing Product model.
@@ -209,11 +225,11 @@ class ProductController extends Controller
                 $productOptions->load( Yii::$app->request->post()) &&
                 Model::loadMultiple($applyDates,Yii::$app->request->post(),'applyDates')
             ){
-
+            $product->actual_date = strtotime(Yii::$app->request->getBodyParam('actual_date'));
             if ($product->validate()){
                 if (!$product->save()) $errors[]=$product->errors;
-
-                if (Applydates::deleteAll('product_id ='. $id)) {
+                // remove old values
+                Applydates::deleteAll('product_id ='. $id);
                     // saving Apply dates
                     foreach (Yii::$app->request->getBodyParam('applyDates') as $dates) {
                         $applyDate = new Applydates();
@@ -221,11 +237,13 @@ class ProductController extends Controller
                         $applyDate->begin_date = strtotime($dates['begin_date']);
                         $applyDate->end_date = strtotime($dates['end_date']);
                         $applyDate->price = $dates['price'];
+                        $applyDate->place_type = $dates['place_type'];
 
-                        if (!$applyDate->save()) $errors[] =$applyDates->errors;
+                        if (!$applyDate->save()) $errors[] =$applyDate->errors;
                     }
-                }
+
             }
+
             if ($product->teg0->validate()) {
                 if (!$product->teg0->save()) $errors[] = $product->errors;
             }
@@ -235,8 +253,13 @@ class ProductController extends Controller
             if ($productOptions->validate()) {
                 if (!$productOptions->save()) $errors[] = $productOptions->errors;
             }
-            return $this->redirect(['view', 'id' => $product->id]);
-        } else {
+
+            if (count($errors)>0) {
+                Yii::$app->session->setFlash('alert', helper::convert_multi_array( $errors) );
+            } else {
+                return $this->redirect(['view', 'id' => $product->id]);
+            }
+        }
             return $this->render('update', [
                 'product' => $product,
                 'countries' => $countriesMap,
@@ -245,7 +268,7 @@ class ProductController extends Controller
                 'applyDates' => $applyDates,
                 'sub_type' => $sub_type,
             ]);
-        }
+
     }
 
     /**

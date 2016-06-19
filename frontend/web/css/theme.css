@@ -128,7 +128,8 @@ margin-right:7px;
 	font-family: 'Arimo',Arial, Helvetica, sans-serif;
 }
  
-.dropdown-menu > li > a {
+.dropdown-menu > li > a ,
+.dropdown-menu > li > ul > li > a {
   display: block;
   padding: 7px 32px 7px 10px;
   clear: both;
@@ -144,34 +145,46 @@ font-family: 'Arimo',Arial, Helvetica, sans-serif;
   
 }
 .dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > ul > li > a:focus,
+.dropdown-menu > li > ul > li > a:hover
+{
   color: #000;
   text-decoration: none;
   background-color: #ffffff;
   padding: 7px 20px 7px 22px;
   font-family: 'Arimo',Arial, Helvetica, sans-serif;
 }
-.dropdown-menu > li > a:before {
+.dropdown-menu > li > a:before,
+.dropdown-menu > li > ul > li > a:before{
   content: "\f105";
   font-family: FontAwesome;
   margin-right: 10px;
   opacity: 0;
   font-size:16px;
 }
-.dropdown-menu > li > a:hover:before {
+.dropdown-menu > li > a:hover:before,
+.dropdown-menu > li > ul > li > a:hover:before
+{
   opacity: 1;
 }
 
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active li > ul > li > a,
+.dropdown-menu > .active li > ul > li > a:hover,
+.dropdown-menu > .active li > ul > li > a:focus
+{
   color: #333;
 text-decoration: none;
 background-color: #ffffff;
 outline: 0;
 }
 
-.dropdown-menu > li.active > a:before {
+.dropdown-menu > li.active > a:before,
+.dropdown-menu > li.active > ul > li.active > a:before
+{
   opacity: 1;
 }
 
@@ -180,6 +193,11 @@ outline: 0;
 .dropdown-menu > .disabled > a:focus {
   color: #999;
 }
+/* third level */
+.dropdown-menu > li > ul  {
+    list-style-type: none;
+}
+
 .navbar-nav > .open > a:after {
 	content: "\f0d8";
 	font-family: FontAwesome;

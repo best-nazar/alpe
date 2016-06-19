@@ -2,6 +2,7 @@
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+/* @var $metaTags common\models\Teg */
 
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
@@ -17,6 +18,14 @@ use common\widgets\PageOutput;
 
 AppAsset::register($this);
 
+$metaTags = \common\models\helper::getMetaData();
+if ($metaTags) {
+    $metaKeywords = $metaTags->meta_keywords;
+    $metaDescription = $metaTags->meta_description;
+} else {
+    $metaKeywords = 'альпи адріа тур, туристична фірма, туристична фірма львова, львів';
+    $metaDescription = 'Туристичний оператор «Альпи Адріа-Тур» є спільним українсько-хорватським підприємством, яке було створене з метою організації якісного і конкурентоспроможного туристичного продукту по Хорватії. Основне завдання нашої компанії полягає в тому, щоб гарантувати нашому клієнтові високий рівень обслуговування, починаючи з першого контакту і закінчуючи реалізацією наших послуг. Як добрі знавці українського та хорватського ринків, надаємо широкий спектр пропозицій по виїзному туризму';
+}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -33,6 +42,8 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= Html::csrfMetaTags() ?>
+    <meta name="description" content="<?=$metaDescription?>">
+    <meta name="keywords" content="<?=$metaKeywords?>">
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
@@ -98,9 +109,14 @@ AppAsset::register($this);
                     ['label' => 'Активний відпочинок', 'url' => ['/site/vacations']],
                 ],
             ],
-            ['label' => 'Раннє бронювання', 'url' => ['/site/booking']],
+            ['label' => 'Готель дня', 'url' => ['/site/booking']],
             ['label' => 'Інформація подорожуючому', 'url' => ['/site/travel-info'],
-                'items' => $itemCountry,
+                'items'=> [
+                            ['label' => 'Візи',
+                                'items' => $itemCountry,
+                            ],
+                            ['label' => 'Туристичний календар', 'url' => ['/site/tour-calendar'] ],
+                ],
             ],
             ['label' => 'Про нас', 'url' => ['/site/about']],
             ['label' => 'Контакти', 'url' => ['/site/contact']],
@@ -152,11 +168,11 @@ AppAsset::register($this);
                     <h3 class="alpe_footer_widget_title">Останнє додане<div class="alpe-footer-separator" id=""></div></h3>
                     <?php foreach( \common\models\helper::recentProducts() as $recent) { ?>
                     <div class="media alpe_recent_widget_post">
-                        <a class="alpe_recent_widget_post_move" href="#">
+                        <a class="alpe_recent_widget_post_move" href="<?=Url::to(['site/show-product','id'=>$recent->id])?>">
                             <img src="/images/<?=$recent->id?>/<?=$recent->main_image?>" class="alpe_recent_widget_post_img">
                         </a>
                         <div class="media-body">
-                            <h3><a href="#"><?=$recent->name?></a></h3>
+                            <h3><a href="<?=Url::to(['site/show-product','id'=>$recent->id])?>"><?=$recent->name?></a></h3>
                             <span class="alpe_recent_widget_post_date"><?=Yii::$app->formatter->asDate($recent->created_at)?></span>
                         </div>
                     </div>

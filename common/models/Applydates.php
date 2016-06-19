@@ -12,6 +12,7 @@ use Yii;
  * @property integer $begin_date
  * @property integer $end_date
  * @property string $price
+ * @property string $place_type
  *
  * @property Product $product
  */
@@ -34,6 +35,7 @@ class Applydates extends \yii\db\ActiveRecord
             [['product_id'], 'required'],
             [['product_id', 'begin_date', 'end_date'], 'integer'],
             [['price'], 'number'],
+            [['place_type'], 'string', 'length' => [0,10]],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }
@@ -48,7 +50,8 @@ class Applydates extends \yii\db\ActiveRecord
             'product_id' => 'Product ID',
             'begin_date' => 'Початок',
             'end_date' => 'Кінець',
-            'price' => 'Ціна'
+            'price' => 'Ціна',
+            'place_type' => 'Тип розміщення'
         ];
     }
 

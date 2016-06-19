@@ -46,7 +46,7 @@ $actualPeriod = \common\models\helper::addMonthToNow(Yii::$app->params['actualPe
                     ]) ,
                 ],
                 [
-                    'label' => 'Дати',
+                    'label' => 'Ціни - Дати',
                     'content' => $this->render('_applyDates_form', [
                         'applyDates' => $product->applydates,
                         'form' => $form,

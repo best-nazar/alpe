@@ -3,7 +3,7 @@
  * Single Product detail view
  */
 
-/* @var $model frontend\models\Product */
+/* @var $model common\models\Product */
 
 use frontend\assets\HomePageAsset;
 use yii\widgets\DetailView;
@@ -32,7 +32,7 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
     <div id="post-1" class="alpe_blog_full post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
         <ul class="blog-date-left">
             <li title="" data-original-title="" class="alpe_post_date"><span class="date"><?=date('d',$productStartDate)?></span><h6><?=Yii::$app->formatter->asDate(date('Y-m-d',$productStartDate),'long')?></h6></li>
-            <li title="" data-original-title="" class="alpe_blog_comment"><i class="fa fa-comments-o"></i><h6><a href="#">1</a></h6></li>
+            <!--<li title="" data-original-title="" class="alpe_blog_comment"><i class="fa fa-comments-o"></i><h6><a href="#">1</a></h6></li>-->
         </ul>
         <div class="post-content-wrap">
             <div class="alpe_blog_thumb_wrapper_showcase">
@@ -57,34 +57,34 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                 <?=Tabs::widget([
                     'items' => [
                         [
-                            'label' => 'Загальна інформація',
-                            'content' => $model->description. DetailView::widget([
-                                'model' => $model,
-                                'attributes' => [
-
-                                    [                      // the owner name of the model
-                                        'label' => 'Локація',
-                                        'value' => '<b>'.$model->country0->name.'</b> ' .$model->region1.' ' .$model->region2,
-                                        'format' =>'html'
-                                    ],
-                                    [                      // the owner name of the model
-                                        'label' => 'Ціна',
-                                        'value' => $model->price.' '. $model->currency0->label,
-                                    ],
-                                ],
-                            ]),
-                            'active' => true
-                        ],
-                        [
-                            'label' => 'Особливості',
+                            'label' => 'Опис об`єкту',
                             'content' => DetailView::widget([
                                 'model' => $model->productoptions[0],
                                 'attributes' => \common\models\helper::productOptionsAttributes($model->productoptions[0]),
                             ]),
                             'headerOptions' => \common\models\helper::productOptionsAttributes($model->productoptions[0])==null ? ['style' => 'display:none'] : ['id' => 'opt'],
+                            'active' => true,
                         ],
                         [
-                            'label'=> 'Дати',
+                            'label' => 'Загальна інформація',
+                            'content' => $model->description. DetailView::widget([
+                                    'model' => $model,
+                                    'attributes' => [
+                                        [                      // the owner name of the model
+                                            'label' => 'Локація',
+                                            'value' => '<b>'.$model->country0->name.'</b> ' .$model->region1.' ' .$model->region2,
+                                            'format' =>'html'
+                                        ],
+                                        [                      // the owner name of the model
+                                            'label' => 'Ціна',
+                                            'value' => $model->price.' '. $model->currency0->label,
+                                        ],
+                                    ],
+                                ]),
+
+                        ],
+                        [
+                            'label'=> 'Ціни',
                             'content' => GridView::widget([
                                 'dataProvider' => new ArrayDataProvider([
                                     'allModels' => $model->applydates,
@@ -92,6 +92,7 @@ $productStartDate = \common\models\helper::productStartDate($model); // applyDat
                                 'columns' => [
                                     'begin_date:date',
                                     'end_date:date',
+                                    'place_type',
                                     [
                                         'label' => 'Ціна',
                                         'value' => function ($model, $index, $widget) {

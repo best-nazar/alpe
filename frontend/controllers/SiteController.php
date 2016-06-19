@@ -19,6 +19,7 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\web\HttpException;
 use yii\data\ActiveDataProvider;
+use yii\db\Expression;
 
 /**
  * Site controller
@@ -304,6 +305,10 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * Hotel of the day
+     * @return string
+     */
     public function actionBooking(){
         $data = Product::find()
             ->joinWith(['options0'])
@@ -311,7 +316,6 @@ class SiteController extends Controller
             ->andWhere(['options.show_in_other'=>1]) // show booking
             ->orderBy('name')
             ->all();
-
             return $this->render('showByBooking', [
                 'data' => $data,
             ]);
@@ -373,6 +377,14 @@ class SiteController extends Controller
         return $this->render('simplePage',[
             'page_name' => 'travel-info',
             'countryCode' => $countryCode,
+        ]);
+    }
+
+    public function actionTourCalendar()
+    {
+        return $this->render('simplePage',[
+            'page_name' => 'tour-calendar',
+            'countryCode' => ''
         ]);
     }
 

@@ -39,6 +39,14 @@ use unclead\widgets\MultipleInput;
             ]
         ],
         [
+            'name'  => 'place_type',
+            'title' => 'Тип розміщення',
+            'options' => [
+                'class' => 'form-applyDates',
+                'maxlength' => 10,
+            ]
+        ],
+        [
             'name'  => 'price',
             'title' => 'Ціна',
             'defaultValue' => '0',

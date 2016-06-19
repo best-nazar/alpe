@@ -67,6 +67,11 @@ $this->params['breadcrumbs'][] = $type->name;
             <a href="<?=Yii::$app->request->referrer?>">повторити спробу...</a>
         </div>
     <?php } ?>
+
+    <?//музенідіс тревел
+    if ($country->name == 'Греція') {?>
+        <iframe src="http://moi-tour.com/frame/go/39360/alpe-adria-tour-lvov/0" width="100%" height="900px"></iframe>
+    <? } ?>
 </div>
 
 </div>

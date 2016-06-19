@@ -92,7 +92,7 @@ class helper {
         foreach ($attributes as $value){
             if ( ($model->attributes[$value] != '0') && (!empty($model->attributes[$value])) ) {
                 //var_dump($value.' = '.$model->attributes[$value]);
-                $attributesToDisplay[] = $value;
+                $attributesToDisplay[] = $value.':html';
             }
         }
         return $attributesToDisplay;
@@ -163,5 +163,28 @@ class helper {
         return Country::find()
             ->orderBy(['name'=>SORT_ASC])
             ->all();
+    }
+
+    /**
+     * Multidimensional Array to String
+     * @param $array
+     * @return string
+     */
+    public static function convert_multi_array($array) {
+        return implode("&",array_map(function($a) {return implode("~",$a);},$array));
+    }
+
+    /**
+     * Meta tags for page header
+     * @return \yii\db\ActiveQuery
+     */
+    public static function getMetaData()
+    {
+        $site_controller = \Yii::$app->urlManager->parseRequest(\Yii::$app->request)[0];
+        if ('site/show-product' == $site_controller )
+        {
+            $prodId = \Yii::$app->urlManager->parseRequest(\Yii::$app->request)[1];
+            return Teg::findOne(['id'=>$prodId]);
+        }
     }
 } 

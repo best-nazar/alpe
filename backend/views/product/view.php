@@ -75,14 +75,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'content' => DetailView::widget([
                     'model' => $model->productoptions[0],
                     'attributes' => [
-                        'location',
-                        'stars',
-                        'in_hotel',
-                        'in_room',
-                        'additional_services',
-                        'food',
-                        'beach',
-                        'note',
+                        'location:html',
+                        'stars:html',
+                        'in_hotel:html',
+                        'in_room:html',
+                        'additional_services:html',
+                        'food:html',
+                        'beach:html',
+                        'note:html',
                         'web',
                     ],
                 ]),
@@ -113,7 +113,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]),
             ],
             [
-            'label' => 'Дати',
+            'label' => 'Ціни-Дати',
             'content' => GridView::widget([
             'dataProvider' => new ArrayDataProvider([
             'allModels' => $model->applydates,
@@ -121,7 +121,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 'begin_date:date',
                 'end_date:date',
-                'price'
+                'place_type',
+                'price',
             ],
 
             ]),

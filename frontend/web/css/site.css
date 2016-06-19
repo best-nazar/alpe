@@ -49,3 +49,8 @@
     position: relative;
     top: -5px;
 }
+
+#w1 > tbody > tr > td
+{
+    text-align: left;
+}
